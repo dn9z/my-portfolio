@@ -11,9 +11,13 @@
     .title{
         display: flex;
 
+        // &:nth-child(6){
+        //     padding-right: 1rem;
+        // }
     }
 
-    p {
-        // transform: scale(5);
+  
+    .title:nth-child(6){
+        padding-right: 1rem;
     }
 }
