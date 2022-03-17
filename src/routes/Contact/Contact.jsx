@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Contact.scss";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+
+// false
 
 const Contact = () => {
-
   const [isHovered_c1, setIsHovered_c1] = useState(false);
   const [isHovered_o, setIsHovered_o] = useState(false);
   const [isHovered_n, setIsHovered_n] = useState(false);
@@ -14,29 +15,53 @@ const Contact = () => {
   const [isHovered_m, setIsHovered_m] = useState(false);
   const [isHovered_e, setIsHovered_e] = useState(false);
 
- 
+  const [tension, setTension] = useState(1)
+
+
+
+  const generateTension = (tensionRaw) => {
+    console.log("tensionRaw: " + tensionRaw);
+    if (tensionRaw > 0.4) {
+      return 1.1;
+    }
+    return 3;
+  };
+
+  let tens = generateTension(tension)
 
   const charVariants = {
     squeeze: {
       scaleY: [0.8, 0.5, 0.3],
-      // originY:0.5,
       transition: {
         duration: 1,
       },
     },
-    loosen: { scaleY: [1, 1.2, 1] },
+    loosen: { scaleY: [1, tens, 1] },
+    initial:{ transform:0}
   };
 
+  // console.log(tension.current)
   return (
     // seems only to work with <p>
     <>
       <div className="contact-main">
         <div className="title">
+        <AnimatePresence initial={false}>
           <motion.p
             onMouseOver={() => setIsHovered_c1(true)}
-            onMouseLeave={() => setIsHovered_c1(false)}
+            onMouseLeave={(e) => {
+              // console.log(
+              //   "sliced style: " + e.target.style.transform.slice(7, 10)
+              // );
+              // tension.current = e.target.style.transform.slice(7, 10);
+              setTension(e.target.style.transform.slice(7, 10))
+              setIsHovered_c1(false);
+            }}
             animate={isHovered_c1 ? "squeeze" : "loosen"}
             variants={charVariants}
+            initial={'initial'}
+            id={"c1"}
+            // ref={tensionElement}
           >
             C
           </motion.p>
@@ -45,6 +70,7 @@ const Contact = () => {
             onMouseLeave={() => setIsHovered_o(false)}
             animate={isHovered_o ? "squeeze" : "loosen"}
             variants={charVariants}
+            id={"o"}
           >
             o
           </motion.p>
@@ -104,6 +130,7 @@ const Contact = () => {
           >
             e
           </motion.p>
+          </AnimatePresence>
         </div>
       </div>
     </>
@@ -111,3 +138,9 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// function getTranslateY(myElement) {
+//   var style = window.getComputedStyle(myElement);
+//   var matrix = new DOMMatrix(style.transform);
+//   return matrix.d
+// }
