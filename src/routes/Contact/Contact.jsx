@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useAnimation } from "framer-motion";
 // false
 
 const Contact = () => {
+  
   const controls_c1 = useAnimation();
   const controls_o = useAnimation();
   const controls_n = useAnimation();
@@ -14,6 +15,9 @@ const Contact = () => {
   const controls_t2 = useAnimation();
   const controls_m = useAnimation();
   const controls_e = useAnimation();
+
+
+  
 
   const [tension, setTension] = useState(1);
 
@@ -44,7 +48,6 @@ const Contact = () => {
     <>
       <div className="contact-main">
         <div className="title">
-          <AnimatePresence initial={false}>
             <motion.p
               onMouseOver={() => controls_c1.start("squeeze")}
               onMouseLeave={(e) => {
@@ -144,7 +147,6 @@ const Contact = () => {
             >
               e
             </motion.p>
-          </AnimatePresence>
         </div>
       </div>
     </>
