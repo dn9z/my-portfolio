@@ -5,7 +5,6 @@ import { AnimatePresence, motion, useAnimation } from "framer-motion";
 // false
 
 const Contact = () => {
-  
   const controls_c1 = useAnimation();
   const controls_o = useAnimation();
   const controls_n = useAnimation();
@@ -17,9 +16,8 @@ const Contact = () => {
   const controls_e = useAnimation();
 
 
-  
 
-  const [tension, setTension] = useState(1);
+  const [tension, setTension] = useState([1,1,1,1,1,1,1,1]);
 
   const generateTension = (tensionRaw) => {
     console.log("tensionRaw: " + tensionRaw);
@@ -38,7 +36,7 @@ const Contact = () => {
         duration: 1,
       },
     },
-    loosen: { scaleY: [1, generateTension(tension), 1] },
+    loosen: (target)=>({ scaleY: [1, generateTension(tension[target]), 1] }),
     initial: { transform: 0 },
   };
 
@@ -56,6 +54,7 @@ const Contact = () => {
               }}
               animate={controls_c1}
               variants={charVariants}
+              custom={'c1'}
             >
               C
             </motion.p>
