@@ -17,7 +17,7 @@ const Contact = () => {
 
 
 
-  const [tension, setTension] = useState([1,1,1,1,1,1,1,1]);
+  const [tension, setTension] = useState(1);
 
   const generateTension = (tensionRaw) => {
     console.log("tensionRaw: " + tensionRaw);
@@ -36,7 +36,7 @@ const Contact = () => {
         duration: 1,
       },
     },
-    loosen: (target)=>({ scaleY: [1, generateTension(tension[target]), 1] }),
+    loosen: { scaleY: [1, generateTension(tension), 1] },
     initial: { transform: 0 },
   };
 
@@ -54,7 +54,6 @@ const Contact = () => {
               }}
               animate={controls_c1}
               variants={charVariants}
-              custom={'c1'}
             >
               C
             </motion.p>
