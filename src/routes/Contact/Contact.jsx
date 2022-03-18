@@ -12,23 +12,18 @@ const Contact = () => {
   const controls_t2 = useAnimation();
   const controls_m = useAnimation();
   const controls_e = useAnimation();
-  const [isHovering,setIsHovering] = useState(false)
 
 
-  // const refC = useRef();
+  const refC = useRef();
 
-  const [node_c1,node_o,node_n,node_t1,node_a,node_c2,node_t2,node_m,node_e] = [useRef(),useRef(),useRef(),useRef(),useRef(),useRef(),useRef(),useRef(),useRef()]
 
 
 
 
   // console.log(node_c1)
   try {
-
     // Update tension array
-
-
-    console.log(node_c1.current.style.transform.slice(7, 10));
+    console.log(refC.current.style.transform.slice(7, 10));
   } catch (error) {}
 
 
@@ -91,7 +86,7 @@ const Contact = () => {
             variants={charVariants}
             custom={0}
             id={0}
-            ref={node_c1}
+            ref={refC}
           >
             C
           </motion.p>
