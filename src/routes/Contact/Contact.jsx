@@ -1,6 +1,6 @@
 import "./Contact.scss";
 import { useState, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useMotionValue } from "framer-motion";
 
 const Contact = () => {
   const controls_c1 = useAnimation();
@@ -14,23 +14,24 @@ const Contact = () => {
   const controls_e = useAnimation();
 
 
-  const refC = useRef();
+  // const scale_c1 = useMotionValue(1)
 
+  // const motionValues = useRef(new Array(9).fill(useMotionValue(1)))
+const motionValues = new Array(9)
 
+motionValues[0] = useMotionValue(1)
+motionValues[1] = useMotionValue(1)
+motionValues[2] = useMotionValue(1)
+motionValues[3] = useMotionValue(1)
+motionValues[4] = useMotionValue(1)
+motionValues[5] = useMotionValue(1)
+motionValues[6] = useMotionValue(1)
+motionValues[7] = useMotionValue(1)
+motionValues[8] = useMotionValue(1)
 
-
-
-  // console.log(node_c1)
-  try {
-    // Update tension array
-    console.log(refC.current.style.transform.slice(7, 10));
-  } catch (error) {}
-
-
-  const [tension, setTension] = useState([1, 1, 1, 1, 1, 1, 1, 1, 1]);
 
   const generateTension = (tensionRaw) => {
-    // console.log("tensionRaw: " + tensionRaw);
+    console.log("tensionRaw: " + tensionRaw);
     if (tensionRaw <= 0.3) return 4;
     if (tensionRaw <= 0.5) return 2;
     if (tensionRaw <= 0.7) return 1.6;
@@ -38,12 +39,6 @@ const Contact = () => {
     if (tensionRaw <= 1) return 1.1;
   };
 
-  const updateTensionArrayHandler = (tensionUpdate, e) => {
-    const arrCopy = [...tension];
-    // console.log(e.target.id)
-    arrCopy[e.target.id] = tensionUpdate;
-    setTension(arrCopy);
-  };
 
   const charVariants = {
     squeeze: {
@@ -53,8 +48,9 @@ const Contact = () => {
       },
     },
     loosen: (index) => {
+      // console.log(motionValues[index].get())
       return {
-        scaleY: [1, generateTension(tension[index]), 1],
+        scaleY: [1, generateTension(motionValues[index].get()), 1],
         transition: {
           type: "spring",
           damping: 500,
@@ -62,11 +58,10 @@ const Contact = () => {
           // stiffness: 100,
         },
       };
-    },
-    initial: { transform: 0 },
+    }
   };
 
-  // console.log(tension.current)
+  console.log('rendered')
   return (
     // seems only to work with <p>
     <>
@@ -74,31 +69,19 @@ const Contact = () => {
         <div className="title">
           <motion.p
             onMouseOver={() => controls_c1.start("squeeze")}
-            onMouseLeave={(e) => {
-              // console.log(e.target.style.transform.slice(7, 10))
-              updateTensionArrayHandler(
-                e.target.style.transform.slice(7, 10),
-                e
-              );
-              controls_c1.start("loosen");
-            }}
+            onMouseLeave={() =>controls_c1.start("loosen")}
+            style={{scaleY:motionValues[0]}}
             animate={controls_c1}
             variants={charVariants}
             custom={0}
             id={0}
-            ref={refC}
           >
             C
           </motion.p>
           <motion.p
             onMouseOver={() => controls_o.start("squeeze")}
-            onMouseLeave={(e) => {
-              updateTensionArrayHandler(
-                e.target.style.transform.slice(7, 10),
-                e
-              );
-              controls_o.start("loosen");
-            }}
+            onMouseLeave={() => controls_o.start("loosen")}
+            style={{scaleY:motionValues[1]}}
             animate={controls_o}
             variants={charVariants}
             custom={1}
@@ -108,13 +91,8 @@ const Contact = () => {
           </motion.p>
           <motion.p
             onMouseOver={() => controls_n.start("squeeze")}
-            onMouseLeave={(e) => {
-              updateTensionArrayHandler(
-                e.target.style.transform.slice(7, 10),
-                e
-              );
-              controls_n.start("loosen");
-            }}
+            onMouseLeave={(e) => controls_n.start("loosen")}
+            style={{scaleY:motionValues[2]}}
             animate={controls_n}
             variants={charVariants}
             custom={2}
@@ -124,13 +102,8 @@ const Contact = () => {
           </motion.p>
           <motion.p
             onMouseOver={() => controls_t1.start("squeeze")}
-            onMouseLeave={(e) => {
-              updateTensionArrayHandler(
-                e.target.style.transform.slice(7, 10),
-                e
-              );
-              controls_t1.start("loosen");
-            }}
+            onMouseLeave={(e) =>controls_t1.start("loosen")}
+            style={{scaleY:motionValues[3]}}
             animate={controls_t1}
             variants={charVariants}
             custom={3}
@@ -140,13 +113,8 @@ const Contact = () => {
           </motion.p>
           <motion.p
             onMouseOver={() => controls_a.start("squeeze")}
-            onMouseLeave={(e) => {
-              updateTensionArrayHandler(
-                e.target.style.transform.slice(7, 10),
-                e
-              );
-              controls_a.start("loosen");
-            }}
+            onMouseLeave={(e) =>controls_a.start("loosen")}
+            style={{scaleY:motionValues[4]}}
             animate={controls_a}
             variants={charVariants}
             custom={4}
@@ -156,13 +124,8 @@ const Contact = () => {
           </motion.p>
           <motion.p
             onMouseOver={() => controls_c2.start("squeeze")}
-            onMouseLeave={(e) => {
-              updateTensionArrayHandler(
-                e.target.style.transform.slice(7, 10),
-                e
-              );
-              controls_c2.start("loosen");
-            }}
+            onMouseLeave={(e) => controls_c2.start("loosen")}
+            style={{scaleY:motionValues[5]}}
             animate={controls_c2}
             variants={charVariants}
             custom={5}
@@ -172,13 +135,8 @@ const Contact = () => {
           </motion.p>
           <motion.p
             onMouseOver={() => controls_t2.start("squeeze")}
-            onMouseLeave={(e) => {
-              updateTensionArrayHandler(
-                e.target.style.transform.slice(7, 10),
-                e
-              );
-              controls_t2.start("loosen");
-            }}
+            onMouseLeave={(e) =>  controls_t2.start("loosen")}
+            style={{scaleY:motionValues[6]}}
             animate={controls_t2}
             variants={charVariants}
             custom={6}
@@ -188,13 +146,8 @@ const Contact = () => {
           </motion.p>
           <motion.p
             onMouseOver={() => controls_m.start("squeeze")}
-            onMouseLeave={(e) => {
-              updateTensionArrayHandler(
-                e.target.style.transform.slice(7, 10),
-                e
-              );
-              controls_m.start("loosen");
-            }}
+            onMouseLeave={(e) => controls_m.start("loosen")}
+            style={{scaleY:motionValues[7]}}
             animate={controls_m}
             variants={charVariants}
             custom={7}
@@ -204,13 +157,8 @@ const Contact = () => {
           </motion.p>
           <motion.p
             onMouseOver={() => controls_e.start("squeeze")}
-            onMouseLeave={(e) => {
-              updateTensionArrayHandler(
-                e.target.style.transform.slice(7, 10),
-                e
-              );
-              controls_e.start("loosen");
-            }}
+            onMouseLeave={(e) =>  controls_e.start("loosen")}
+            style={{scaleY:motionValues[8]}}
             animate={controls_e}
             variants={charVariants}
             custom={8}
