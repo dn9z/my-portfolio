@@ -13,24 +13,22 @@ const Contact = () => {
   const controls_m = useAnimation();
   const controls_e = useAnimation();
 
-
   // const scale_c1 = useMotionValue(1)
 
   // const motionValues = useRef(new Array(9).fill(useMotionValue(1)))
-const motionValues = new Array(9)
+  const motionValues = new Array(9);
 
-motionValues[0] = useMotionValue(1)
-motionValues[1] = useMotionValue(1)
-motionValues[2] = useMotionValue(1)
-motionValues[3] = useMotionValue(1)
-motionValues[4] = useMotionValue(1)
-motionValues[5] = useMotionValue(1)
-motionValues[6] = useMotionValue(1)
-motionValues[7] = useMotionValue(1)
-motionValues[8] = useMotionValue(1)
+  motionValues[0] = useMotionValue(1);
+  motionValues[1] = useMotionValue(1);
+  motionValues[2] = useMotionValue(1);
+  motionValues[3] = useMotionValue(1);
+  motionValues[4] = useMotionValue(1);
+  motionValues[5] = useMotionValue(1);
+  motionValues[6] = useMotionValue(1);
+  motionValues[7] = useMotionValue(1);
+  motionValues[8] = useMotionValue(1);
 
-
-  const generateTension = (tensionRaw) => {
+  const processTension = (tensionRaw) => {
     console.log("tensionRaw: " + tensionRaw);
     if (tensionRaw <= 0.3) return 4;
     if (tensionRaw <= 0.5) return 2;
@@ -39,29 +37,38 @@ motionValues[8] = useMotionValue(1)
     if (tensionRaw <= 1) return 1.1;
   };
 
-
   const charVariants = {
     squeeze: {
-      scaleY: [0.9, 0.7, 0.4, 0.35, 0.3],
+      scaleY: [0.9, 0.85, 0.8, 0.75, 0.5, 0.4, 0.35, 0.3],
       transition: {
-        duration: 2,
+        duration: 3,
+        repeatDelay:0.1
       },
     },
     loosen: (index) => {
       // console.log(motionValues[index].get())
       return {
-        scaleY: [1, generateTension(motionValues[index].get()), 1],
+        scaleY: [
+          1,
+          processTension(motionValues[index].get()),
+          1,
+          processTension(motionValues[index].get()) / 2,
+          1,
+          1.1,
+          1
+        ],
         transition: {
-          type: "spring",
-          damping: 500,
-          mass: 1,
-          // stiffness: 100,
+          // type: "spring",
+          duration: 1.6,
+          damping: 20,
+          mass: 0.1,
+          stiffness: 50,
         },
       };
-    }
+    },
   };
 
-  console.log('rendered')
+  console.log("rendered");
   return (
     // seems only to work with <p>
     <>
@@ -69,8 +76,8 @@ motionValues[8] = useMotionValue(1)
         <div className="title">
           <motion.p
             onMouseOver={() => controls_c1.start("squeeze")}
-            onMouseLeave={() =>controls_c1.start("loosen")}
-            style={{scaleY:motionValues[0]}}
+            onMouseLeave={() => controls_c1.start("loosen")}
+            style={{ scaleY: motionValues[0] }}
             animate={controls_c1}
             variants={charVariants}
             custom={0}
@@ -81,7 +88,7 @@ motionValues[8] = useMotionValue(1)
           <motion.p
             onMouseOver={() => controls_o.start("squeeze")}
             onMouseLeave={() => controls_o.start("loosen")}
-            style={{scaleY:motionValues[1]}}
+            style={{ scaleY: motionValues[1] }}
             animate={controls_o}
             variants={charVariants}
             custom={1}
@@ -92,7 +99,7 @@ motionValues[8] = useMotionValue(1)
           <motion.p
             onMouseOver={() => controls_n.start("squeeze")}
             onMouseLeave={(e) => controls_n.start("loosen")}
-            style={{scaleY:motionValues[2]}}
+            style={{ scaleY: motionValues[2] }}
             animate={controls_n}
             variants={charVariants}
             custom={2}
@@ -102,8 +109,8 @@ motionValues[8] = useMotionValue(1)
           </motion.p>
           <motion.p
             onMouseOver={() => controls_t1.start("squeeze")}
-            onMouseLeave={(e) =>controls_t1.start("loosen")}
-            style={{scaleY:motionValues[3]}}
+            onMouseLeave={(e) => controls_t1.start("loosen")}
+            style={{ scaleY: motionValues[3] }}
             animate={controls_t1}
             variants={charVariants}
             custom={3}
@@ -113,8 +120,8 @@ motionValues[8] = useMotionValue(1)
           </motion.p>
           <motion.p
             onMouseOver={() => controls_a.start("squeeze")}
-            onMouseLeave={(e) =>controls_a.start("loosen")}
-            style={{scaleY:motionValues[4]}}
+            onMouseLeave={(e) => controls_a.start("loosen")}
+            style={{ scaleY: motionValues[4] }}
             animate={controls_a}
             variants={charVariants}
             custom={4}
@@ -125,7 +132,7 @@ motionValues[8] = useMotionValue(1)
           <motion.p
             onMouseOver={() => controls_c2.start("squeeze")}
             onMouseLeave={(e) => controls_c2.start("loosen")}
-            style={{scaleY:motionValues[5]}}
+            style={{ scaleY: motionValues[5] }}
             animate={controls_c2}
             variants={charVariants}
             custom={5}
@@ -135,8 +142,8 @@ motionValues[8] = useMotionValue(1)
           </motion.p>
           <motion.p
             onMouseOver={() => controls_t2.start("squeeze")}
-            onMouseLeave={(e) =>  controls_t2.start("loosen")}
-            style={{scaleY:motionValues[6]}}
+            onMouseLeave={(e) => controls_t2.start("loosen")}
+            style={{ scaleY: motionValues[6] }}
             animate={controls_t2}
             variants={charVariants}
             custom={6}
@@ -147,7 +154,7 @@ motionValues[8] = useMotionValue(1)
           <motion.p
             onMouseOver={() => controls_m.start("squeeze")}
             onMouseLeave={(e) => controls_m.start("loosen")}
-            style={{scaleY:motionValues[7]}}
+            style={{ scaleY: motionValues[7] }}
             animate={controls_m}
             variants={charVariants}
             custom={7}
@@ -157,8 +164,8 @@ motionValues[8] = useMotionValue(1)
           </motion.p>
           <motion.p
             onMouseOver={() => controls_e.start("squeeze")}
-            onMouseLeave={(e) =>  controls_e.start("loosen")}
-            style={{scaleY:motionValues[8]}}
+            onMouseLeave={(e) => controls_e.start("loosen")}
+            style={{ scaleY: motionValues[8] }}
             animate={controls_e}
             variants={charVariants}
             custom={8}
