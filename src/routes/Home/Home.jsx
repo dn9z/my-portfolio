@@ -1,9 +1,10 @@
 import React from "react";
+import TitleAnim from "../../components/anim/TitleAnim";
 import "./Home.scss";
 const Home = () => {
   return (
     <div className="home-main">
-      <h1>Home</h1>
+      <TitleAnim titleString={'Welcome'}/>
     </div>
   );
 };
