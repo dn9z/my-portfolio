@@ -1,7 +1,6 @@
 import "./Contact.scss";
 import { useState, useRef } from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
-import { useEffect } from "react/cjs/react.production.min";
 
 const Contact = () => {
   const controls = new Array(9);
@@ -15,17 +14,6 @@ const Contact = () => {
   controls[6] = useAnimation();
   controls[7] = useAnimation();
   controls[8] = useAnimation();
-
-//  controls.forEach((ele)=>{
-//    ele = useAnimation()
-//  })
-
-  // useEffect(()=>{
-  //   for (let i = 0; i < controls.length; i++) {
-  //     controls[i] = useAnimation()
-  //   }
-  // },[])
-
 
   // const scale_c1 = useMotionValue(1)
 
