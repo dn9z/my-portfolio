@@ -1,16 +1,16 @@
-// .title{
-//   position: absolute;
-//   // background-color: #fff;
+.title{
+  position: absolute;
+  // background-color: #fff;
 
-//   top: 10rem;
-//   left: 8rem;
-//   display: flex;
-//   font-size: 4rem;
-//   font-weight: 400;
-//   color: aliceblue;
-//  p{
-//      &:nth-child(7){
-//          padding-right: 1rem;
-//      }
-//  }
-// }
+  top: 10rem;
+  left: 8rem;
+  display: flex;
+  font-size: 4rem;
+  font-weight: 400;
+  color: aliceblue;
+ p{
+     &:nth-child(7){
+         padding-right: 1rem;
+     }
+ }
+}

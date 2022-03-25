@@ -1,8 +1,12 @@
 import React from 'react'
 
+import TitleAnim from "../../components/anim/TitleAnim";
+
 const Work = () => {
   return (
-    <div>Work</div>
+    <>
+      <TitleAnim titleString={'My Work'}/>
+    </>
   )
 }
 
