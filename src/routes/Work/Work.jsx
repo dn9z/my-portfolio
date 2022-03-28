@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TitleAnim from "../../components/anim/TitleAnim";
+import TitleAnim from "../../components/anim/TitleAnim/TitleAnim";
 
 const Work = () => {
   return (

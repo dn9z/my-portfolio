@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.scss";
-import TitleAnim from "../../components/anim/TitleAnim";
+import TitleAnim from "../../components/anim/TitleAnim/TitleAnim";
 const About = () => {
   return (
     <>

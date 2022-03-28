@@ -1,5 +1,5 @@
 import "./Contact.scss";
-import TitleAnim from "../../components/anim/TitleAnim";
+import TitleAnim from "../../components/anim/TitleAnim/TitleAnim";
 
 const Contact = () => {
 

@@ -1,0 +1,17 @@
+.title {
+  display: flex;
+  font-size: 6rem;
+  font-weight: 400;
+
+  .title-char{
+    display: block;
+  }
+
+  .cursor{
+    background-color: red;
+    height: 5.6rem;
+    width: 3.2rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+  }
+}
