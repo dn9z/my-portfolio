@@ -2,7 +2,7 @@ import React from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 import "./TitleAnim.scss";
 
-const TitleAnim = ({ titleString }) => {
+const TitleAnim = ({ titleString, className }) => {
   const controls = new Array(9);
 
   controls[0] = useAnimation();
@@ -14,7 +14,13 @@ const TitleAnim = ({ titleString }) => {
   controls[6] = useAnimation();
   controls[7] = useAnimation();
   controls[8] = useAnimation();
-
+  controls[9] = useAnimation();
+  controls[10] = useAnimation();
+  controls[11] = useAnimation();
+  controls[12] = useAnimation();
+  controls[13] = useAnimation();
+  controls[14] = useAnimation();
+  controls[15] = useAnimation();
   // const scale_c1 = useMotionValue(1)
 
   const motionValues = new Array(9);
@@ -28,6 +34,13 @@ const TitleAnim = ({ titleString }) => {
   motionValues[6] = useMotionValue(1);
   motionValues[7] = useMotionValue(1);
   motionValues[8] = useMotionValue(1);
+  motionValues[9] = useMotionValue(1);
+  motionValues[10] = useMotionValue(1);
+  motionValues[11] = useMotionValue(1);
+  motionValues[12] = useMotionValue(1);
+  motionValues[13] = useMotionValue(1);
+  motionValues[14] = useMotionValue(1);
+  motionValues[15] = useMotionValue(1);
   // const motionValues = new Array(9).fill(useMotionValue(1))
 
   const processTension = (tensionRaw) => {
@@ -71,26 +84,24 @@ const TitleAnim = ({ titleString }) => {
   };
 
   return (
-    <>
-      <div className="title">
-        {titleString.split("").map((ele, i) => {
-          // console.log(ele)
-          return (
-            <motion.p
-              key={i}
-              onMouseOver={() => controls[i].start("squeeze")}
-              onMouseLeave={() => controls[i].start("loosen")}
-              style={{ scaleY: motionValues[i] }}
-              animate={controls[i]}
-              custom={i} // this gets passed to the index in the variants
-              variants={charVariants}
-            >
-              {ele}
-            </motion.p>
-          );
-        })}
-      </div>
-    </>
+    <div className={"title " + className}>
+      {titleString.split("").map((ele, i) => {
+        // console.log(ele)
+        return (
+          <motion.p
+            key={i}
+            onMouseOver={() => controls[i].start("squeeze")}
+            onMouseLeave={() => controls[i].start("loosen")}
+            style={{ scaleY: motionValues[i] }}
+            animate={controls[i]}
+            custom={i} // this gets passed to the index in the variants
+            variants={charVariants}
+          >
+            {ele}
+          </motion.p>
+        );
+      })}
+    </div>
   );
 };
 

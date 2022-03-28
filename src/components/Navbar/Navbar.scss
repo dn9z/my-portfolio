@@ -1,11 +1,11 @@
 nav {
+  position: absolute;
   // align-self: flex-end;
-  padding-top: 7rem;
+  padding-top: 30vh;
   // margin-right: 2rem;
   color: #fff;
   height: 100vh;
   width: 6rem;
-  position: absolute;
   right: 0;
   font-size: 1.5rem;
 
@@ -13,7 +13,7 @@ nav {
     display: flex;
     list-style: none;
     flex-direction: column;
-
+    
     li {
       padding: 1rem;
       width: 4rem;

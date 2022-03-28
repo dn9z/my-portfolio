@@ -4,7 +4,9 @@ import "./Home.scss";
 const Home = () => {
   return (
     <div className="home-main">
-      <TitleAnim titleString={'Welcome'}/>
+      <TitleAnim titleString={'Welcome'} className='home-title'/>
+      <p>Deniz Ilyasoglu</p>
+      <p>creative front-end designer, backend developer, sports enthusiast</p>
     </div>
   );
 };
