@@ -12,7 +12,17 @@ const charVariants = {
   },
 };
 
-
+const cursorVariants = {
+  hidden: {
+    opacity:0
+  },
+  show: {
+    opacity:0.26,
+    transition:{
+      delay:2,duration:0.8,repeat: Infinity
+    }
+  },
+}
 
 const TitleAnim = ({ titleString, className }) => {
   return (
@@ -22,6 +32,12 @@ const TitleAnim = ({ titleString, className }) => {
       initial="hidden"
       animate="show"
     >
+      <motion.div
+className="title-bar"
+variants={barVariants}
+initial="hidden"
+animate="show"
+></motion.div>
       {titleString.split("").map((ele, i) => {
         // console.log(ele)
         return (
