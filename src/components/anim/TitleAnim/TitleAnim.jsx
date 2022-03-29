@@ -40,36 +40,50 @@ const barVariants = {
   },
 };
 
-const TitleAnim = ({ titleString, className }) => {
+const TitleAnim = ({ titleString, className, subTitleString }) => {
   return (
-    <motion.ul
-      className={"title " + className}
-      transition={{ delayChildren: 3.6, staggerChildren: 0.3 }}
-      initial="hidden"
-      animate="show"
-    >
+    // *** Title Container ***
+    <div className="title-anim-container">
       <motion.div
         className="title-bar"
         variants={barVariants}
         initial="hidden"
         animate="show"
       ></motion.div>
-      {titleString.split("").map((ele, i) => {
-        // console.log(ele)
-        return (
-          <motion.div variants={charVariants}>
-            <CharacterAnim char={ele} i={i} />
-          </motion.div>
-        );
-      })}
-      <motion.div
-      variants={cursorVariants}
-        className="cursor"
-        initial='hidden'
-        animate='show'
-        transition={{ duration: 0.8, repeat: Infinity }}
-      ></motion.div>
-    </motion.ul>
+      <motion.ul
+        className={"title " + className}
+        transition={{ delayChildren: 3.6, staggerChildren: 0.3 }}
+        initial="hidden"
+        animate="show"
+      >
+        {/* *** Motion Bar *** */}
+
+        <div className="title-cursor-wrapper">
+          {/* *** Main title *** */}
+          {titleString.split("").map((ele, i) => {
+            return (
+              <motion.div key={i} variants={charVariants}>
+                <CharacterAnim char={ele} i={i} />
+              </motion.div>
+            );
+          })}
+          {/* *** Cursor *** */}
+          <motion.div
+            variants={cursorVariants}
+            className="cursor"
+            initial="hidden"
+            animate="show"
+            transition={{ duration: 0.8, repeat: Infinity }}
+          ></motion.div>
+        </div>
+        <div className="subTitle">
+          {subTitleString.split("").map((ele, i) => {
+            // console.log(subTitleString)
+            return <span key={i}>{ele}</span>;
+          })}
+        </div>
+      </motion.ul>
+    </div>
   );
 };
 

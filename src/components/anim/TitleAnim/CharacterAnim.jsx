@@ -38,7 +38,7 @@ const CharacterAnim = ({ char, i }) => {
   };
 
   const processTension = (tensionRaw) => {
-    console.log("tensionRaw: " + tensionRaw);
+    // console.log("tensionRaw: " + tensionRaw);
     if (tensionRaw <= 0.3) return 4;
     if (tensionRaw <= 0.5) return 2;
     if (tensionRaw <= 0.7) return 1.6;
