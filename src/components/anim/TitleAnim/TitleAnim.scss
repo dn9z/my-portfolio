@@ -18,7 +18,7 @@
       .title-char {
         display: block;
       }
-      .cursor {
+      .title-cursor {
         background-color: red;
         height: 5.6rem;
         width: 3.2rem;
@@ -26,9 +26,29 @@
         margin-left: 1rem;
       }
     }
-    .subTitle {
-      font-size: 1.5rem;
-      font-weight: 300;
-    }
+      // display: flex;
+      .subTitle {
+        font-size: 1.5rem;
+        font-weight: 300;
+        // display: flex;
+        .subTitle-char {
+          // display: inline;
+        }
+        .subTitle-cursor {
+          background-color: red;
+          height: 1.5rem;
+          width: 0.9rem;
+          // width: 1rem;
+          // margin-top: 0.5rem;
+          // margin-left: 1rem;
+          display: inline-block;
+          // top: 10px;
+          margin-left: 0.4rem;
+          top: 0.23rem;
+          position: relative;
+        }
+      }
+
+    
   }
 }

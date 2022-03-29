@@ -40,6 +40,17 @@ const barVariants = {
   },
 };
 
+const subTitleCharVariants = {
+  hidden: {
+    display: "none",
+    opacity: 0,
+  },
+  show: {
+    display: "inline",
+    opacity: 1,
+  },
+};
+
 const TitleAnim = ({ titleString, className, subTitleString }) => {
   return (
     // *** Title Container ***
@@ -70,18 +81,38 @@ const TitleAnim = ({ titleString, className, subTitleString }) => {
           {/* *** Cursor *** */}
           <motion.div
             variants={cursorVariants}
-            className="cursor"
+            className="title-cursor"
             initial="hidden"
             animate="show"
             transition={{ duration: 0.8, repeat: Infinity }}
           ></motion.div>
         </div>
-        <div className="subTitle">
+        <motion.div
+          className="subTitle"
+          transition={{ delayChildren: 8.6, staggerChildren: 0.1 }}
+          initial="hidden"
+          animate="show"
+        >
           {subTitleString.split("").map((ele, i) => {
             // console.log(subTitleString)
-            return <span key={i}>{ele}</span>;
+            return (
+              <motion.span
+                className="subTitle-char"
+                variants={subTitleCharVariants}
+                key={i}
+              >
+                {ele}
+              </motion.span>
+            );
           })}
-        </div>
+          <motion.span
+            variants={cursorVariants}
+            className="subTitle-cursor"
+            initial="hidden"
+            animate="show"
+            transition={{ duration: 0.8, repeat: Infinity }}
+          ></motion.span>
+        </motion.div>
       </motion.ul>
     </div>
   );
