@@ -7,7 +7,7 @@ const Home = () => {
       <TitleAnim
         titleString="Welcome"
         className="home-title"
-        subTitleString="My name isDeniz Ilyasoglu, I am a creative front-end designer, a backend developer and sports enthusiast"
+        subTitleString="My name is Deniz Ilyasoglu, I'm a creative front-end designer, backend developer and sports enthusiast"
       />
     
   );

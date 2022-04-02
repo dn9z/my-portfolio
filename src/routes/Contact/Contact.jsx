@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     // seems only to work with <p>
     <>
-      <TitleAnim titleString={'Contactme'} className='contact-title'/>
+      <TitleAnim titleString={'Contact me'} className='contact-title'/>
     </>
   );
 };
