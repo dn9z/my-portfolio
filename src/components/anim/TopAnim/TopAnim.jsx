@@ -1,6 +1,6 @@
 import React from "react";
 import "./TopAnim.scss";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const topAnimVariants = {
   hidden: {
@@ -17,12 +17,13 @@ const topAnimVariants = {
 const TopAnim = () => {
   return (
     <div className="topAnim-container">
-      <motion.div
-        className="topAnim-moving-bar"
-        variants={topAnimVariants}
-        initial="hidden"
-        animate="visible"
-      ></motion.div>
+
+        <motion.div
+          className="topAnim-moving-bar"
+          variants={topAnimVariants}
+          initial="hidden"
+          animate="visible"
+        ></motion.div>
     </div>
   );
 };

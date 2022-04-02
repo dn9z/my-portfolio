@@ -57,6 +57,7 @@ const barVariants = {
       duration: 2,
     },
   },
+
 };
 
 const subTitleCharVariants = {
@@ -79,6 +80,7 @@ const TitleAnim = ({ titleString, className, subTitleString }) => {
         variants={barVariants}
         initial="hidden"
         animate="show"
+        exit='hidden'
       ></motion.div>
       <motion.ul
         className="title"
