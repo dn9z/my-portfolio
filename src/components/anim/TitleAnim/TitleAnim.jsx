@@ -57,21 +57,9 @@ const barVariants = {
       duration: 2,
     },
   },
-
 };
 
-const subTitleCharVariants = {
-  hidden: {
-    display: "none",
-    opacity: 0,
-  },
-  show: {
-    display: "inline",
-    opacity: 1,
-  },
-};
-
-const TitleAnim = ({ titleString, className, subTitleString }) => {
+const TitleAnim = ({ titleString, className }) => {
   return (
     <div className={"title-anim-container " + className}>
       {/* *** Motion Bar *** */}
@@ -80,7 +68,7 @@ const TitleAnim = ({ titleString, className, subTitleString }) => {
         variants={barVariants}
         initial="hidden"
         animate="show"
-        exit='hidden'
+        exit="hidden"
       ></motion.div>
       <motion.ul
         className="title"
@@ -88,8 +76,6 @@ const TitleAnim = ({ titleString, className, subTitleString }) => {
         initial="hidden"
         animate="show"
         exit="exit"
-
-        // transition={{ delayChildren: 3.6, staggerChildren: 0.3 }}
       >
         <div className="title-cursor-wrapper">
           {/* *** Main title *** */}
@@ -100,62 +86,14 @@ const TitleAnim = ({ titleString, className, subTitleString }) => {
               </motion.div>
             );
           })}
-          {/* *** Cursor *** */}
           <motion.div
-            className="title-cursor-container"
-            animate={
-              subTitleString && {
-                rotate: "360deg",
-                x: "-26.3rem",
-                y: "4.6rem",
-                scale: 0.25,
-                opacity: [1, 1, 1, 0],
-              }
-            }
-            transition={{ delay: 7 }}
-          >
-            <motion.div
-              variants={cursorVariants}
-              className="title-cursor"
-              initial="hidden"
-              animate="show"
-              transition={{ duration: 0.8, repeat: Infinity }}
-            ></motion.div>
-          </motion.div>
-        </div>
-        {subTitleString && (
-          <motion.div
-            className="subTitle"
-            transition={{ delayChildren: 8.6, staggerChildren: 0.1 }}
+            variants={cursorVariants}
+            className="title-cursor"
             initial="hidden"
             animate="show"
-            exit={{ y: "100vh", transition: { duration: 2 } }}
-          >
-            {subTitleString.split("").map((ele, i) => {
-              // console.log(subTitleString)
-              return (
-                <motion.span
-                  className="subTitle-char"
-                  variants={subTitleCharVariants}
-                  key={i}
-                >
-                  {ele}
-                </motion.span>
-              );
-            })}
-            <motion.span
-              variants={cursorVariants}
-              className="subTitle-cursor"
-              initial="hidden"
-              animate={{ opacity: 0.26 }}
-              transition={{
-                delay: 8.6,
-                duration: 0.8,
-                repeat: Infinity,
-              }}
-            ></motion.span>
-          </motion.div>
-        )}
+            transition={{ duration: 0.8, repeat: Infinity }}
+          ></motion.div>
+        </div>
       </motion.ul>
     </div>
   );

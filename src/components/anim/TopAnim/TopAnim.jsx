@@ -17,7 +17,6 @@ const topAnimVariants = {
 const TopAnim = () => {
   return (
     <div className="topAnim-container">
-
         <motion.div
           className="topAnim-moving-bar"
           variants={topAnimVariants}
