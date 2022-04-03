@@ -5,7 +5,7 @@ import Home from "./routes/Home/Home";
 import About from "./routes/About/About";
 import Work from "./routes/Work/Work";
 import Contact from "./routes/Contact/Contact";
-import TopAnim from "./components/anim/TopBarAnim/TopBarAnim";
+import TopBarAnim from "./components/anim/TopBarAnim/TopBarAnim";
 import { AnimatePresence } from "framer-motion";
 import MidBarAnim from "./components/anim/MidBarAnim/MidBarAnim";
 
@@ -15,7 +15,7 @@ function App() {
   return (
     <main>
       <Navbar />
-      <TopAnim />
+      <TopBarAnim />
       <section>
         <AnimatePresence>
           <div className="content-container">
