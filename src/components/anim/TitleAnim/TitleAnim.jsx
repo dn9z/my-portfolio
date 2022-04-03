@@ -47,29 +47,13 @@ const cursorVariants = {
   },
 };
 
-const barVariants = {
-  hidden: {
-    y: "100vh",
-  },
-  show: {
-    y: 0,
-    transition: {
-      duration: 2,
-    },
-  },
-};
+
 
 const TitleAnim = ({ titleString, className }) => {
   return (
     <div className={"title-anim-container " + className}>
       {/* *** Motion Bar *** */}
-      <motion.div
-        className="title-bar"
-        variants={barVariants}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-      ></motion.div>
+
       <motion.ul
         className="title"
         variants={titleContainerVariants}

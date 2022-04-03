@@ -12,13 +12,21 @@ main {
   section {
     height: 100vh;
     width: 100vw;
+      // display: flex;
 
-    .content-container {
-      margin: 0 calc(25vw - 6rem);
-      padding-top: 41vh;
-      color: aliceblue;
-      display: flex;
-      flex-direction: column;
-    }
+      .content-container {
+        margin: 0 calc(25vw - 6rem);
+        padding-top: 41vh;
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .title-bar{
+          position: absolute;
+          left: -1rem;
+          top: 33rem;
+        }
+      }
+    
   }
 }

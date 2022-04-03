@@ -1,5 +1,5 @@
 import React from "react";
-import "./TopAnim.scss";
+import "./TopBarAnim.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
 const topAnimVariants = {
@@ -14,7 +14,7 @@ const topAnimVariants = {
   },
 };
 
-const TopAnim = () => {
+const TopBarAnim = () => {
   return (
     <div className="topAnim-container">
         <motion.div
@@ -27,4 +27,4 @@ const TopAnim = () => {
   );
 };
 
-export default TopAnim;
+export default TopBarAnim;
