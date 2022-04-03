@@ -50,11 +50,12 @@ const cursorVariants = {
 
 
 
-const TitleAnim = ({ titleString, className }) => {
+const TitleAnim = ({ titleString, className, location }) => {
+  console.log(location)
   return (
     <div className={"title-anim-container " + className}>
       {/* *** Motion Bar *** */}
-      <MidBarAnim />
+      <MidBarAnim location={location}/>
       <motion.ul
         className="title"
         variants={titleContainerVariants}

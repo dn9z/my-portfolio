@@ -1,14 +1,14 @@
 import "./Contact.scss";
 import TitleAnim from "../../components/anim/TitleAnim/TitleAnim";
 
-const Contact = () => {
+const Contact = ({location}) => {
 
 
   console.log("rendered");
   return (
     // seems only to work with <p>
     <>
-      <TitleAnim titleString={'Contact me'} className='contact-title'/>
+      <TitleAnim titleString={'Contact me'} className='contact-title' location={location}/>
     </>
   );
 };

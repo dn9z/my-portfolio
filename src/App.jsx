@@ -13,6 +13,7 @@ import EnvAnim from "./components/anim/EnvAnim/EnvAnim";
 function App() {
   const location = useLocation();
 
+    console.log(location.pathname)
   return (
     <main>
       <Navbar />
@@ -23,10 +24,10 @@ function App() {
         <div className="content-container">
           <AnimatePresence exitBeforeEnter>
             <Routes location={location} key={location.pathname}>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/work" element={<Work />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/" element={<Home location={location}/>} />
+              <Route path="/about" element={<About location={location}/>} />
+              <Route path="/work" element={<Work location={location}/>} />
+              <Route path="/contact" element={<Contact location={location}/>} />
             </Routes>
           </AnimatePresence>
         </div>

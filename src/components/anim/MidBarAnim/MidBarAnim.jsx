@@ -21,12 +21,13 @@ const barVariants = {
     // },
   }
 };
-const MidBarAnim = () => {
+const MidBarAnim = ({location}) => {
+  // console.log(location)
   return (
     <motion.div
       className="title-bar"
       variants={barVariants}
-      initial="hidden"
+      initial={location.pathname==='/'?'hidden':'transition'}
       animate="show"
       exit="exit"
     ></motion.div>
