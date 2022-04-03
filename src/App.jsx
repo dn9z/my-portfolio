@@ -8,6 +8,7 @@ import Contact from "./routes/Contact/Contact";
 import TopBarAnim from "./components/anim/TopBarAnim/TopBarAnim";
 import { AnimatePresence } from "framer-motion";
 import MidBarAnim from "./components/anim/MidBarAnim/MidBarAnim";
+import EnvAnim from "./components/anim/EnvAnim/EnvAnim";
 
 function App() {
   const location = useLocation();
@@ -15,21 +16,20 @@ function App() {
   return (
     <main>
       <Navbar />
-      <TopBarAnim />
       <section>
-        <AnimatePresence>
-          <div className="content-container">
-            <MidBarAnim />
-            <div className="content-container-wrapper">
-              <Routes location={location} key={location.key}>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/work" element={<Work />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </div>
-          </div>
+        <AnimatePresence exitBeforeEnter>
+          <EnvAnim key={location.pathname} />
         </AnimatePresence>
+        <div className="content-container">
+          <AnimatePresence exitBeforeEnter>
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </AnimatePresence>
+        </div>
       </section>
     </main>
   );

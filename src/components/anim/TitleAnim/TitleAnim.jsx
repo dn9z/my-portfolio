@@ -2,6 +2,7 @@ import React from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 import "./TitleAnim.scss";
 import CharacterAnim from "./CharacterAnim";
+import MidBarAnim from "../MidBarAnim/MidBarAnim";
 
 const titleContainerVariants = {
   show: {
@@ -53,7 +54,7 @@ const TitleAnim = ({ titleString, className }) => {
   return (
     <div className={"title-anim-container " + className}>
       {/* *** Motion Bar *** */}
-
+      <MidBarAnim />
       <motion.ul
         className="title"
         variants={titleContainerVariants}

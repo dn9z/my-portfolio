@@ -1,12 +1,11 @@
-.topAnim-container{
+.topAnim-moving-bar {
   position: absolute;
   // background-color: red;
   // background-image: radial-gradient(red,blue);
-  width: 100vw;
+  width: 150vw;
   height: 0.22rem;
-
-  .topAnim-moving-bar{
-    background-image: radial-gradient(red,blue);
-    height: 0.22rem;
-  }
+  top: 0;
+  right: 0;
+  background-image: radial-gradient(red, blue);
+  height: 0.22rem;
 }

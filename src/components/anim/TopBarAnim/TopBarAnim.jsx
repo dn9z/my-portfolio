@@ -2,7 +2,7 @@ import React from "react";
 import "./TopBarAnim.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
-const topAnimVariants = {
+const topBarAnimVariants = {
   hidden: {
     x: "-100vw",
   },
@@ -12,18 +12,23 @@ const topAnimVariants = {
       duration: 2,
     },
   },
+  exit: {
+    x: "-20rem",
+    transition: {
+      duration: 2,
+    },
+  },
 };
 
 const TopBarAnim = () => {
   return (
-    <div className="topAnim-container">
-        <motion.div
-          className="topAnim-moving-bar"
-          variants={topAnimVariants}
-          initial="hidden"
-          animate="visible"
-        ></motion.div>
-    </div>
+    <motion.div
+      className="topAnim-moving-bar"
+      variants={topBarAnimVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    ></motion.div>
   );
 };
 

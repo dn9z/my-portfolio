@@ -5,12 +5,21 @@ const barVariants = {
   hidden: {
     y: "100vh",
   },
+  transition:{
+    y:'30rem',
+  },
   show: {
     y: 0,
     transition: {
       duration: 2,
     },
   },
+  exit:{
+    y:'30rem',
+    // transition: {
+    //   duration: 2,
+    // },
+  }
 };
 const MidBarAnim = () => {
   return (
@@ -19,7 +28,7 @@ const MidBarAnim = () => {
       variants={barVariants}
       initial="hidden"
       animate="show"
-      exit="hidden"
+      exit="exit"
     ></motion.div>
   );
 };
