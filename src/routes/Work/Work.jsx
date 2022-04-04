@@ -13,7 +13,7 @@ const Work = () => {
           perspective={500}
           glareEnable={true}
           glareMaxOpacity={0.45}
-          glareBorderRadius='0.5rem'
+          glareBorderRadius="0.5rem"
           scale={1.02}
         >
           <img

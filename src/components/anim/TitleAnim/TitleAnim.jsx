@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 import "./TitleAnim.scss";
 import CharacterAnim from "./CharacterAnim";
-import MidBarAnim from "../MidBarAnim/MidBarAnim";
+import MidBarAnim from "./MidBarAnim/MidBarAnim";
 import { MyContext } from "../../Context/Context";
 
 const titleContainerVariants = {

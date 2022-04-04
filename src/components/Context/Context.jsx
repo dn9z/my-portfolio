@@ -1,6 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
 import { useLocation } from "react-router-dom";
-import { useRef } from "react/cjs/react.production.min";
 
 const MyContext = createContext(null)
 

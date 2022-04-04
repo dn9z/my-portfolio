@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import './MidBarAnim.scss'
-import { MyContext } from "../../Context/Context";
+import { MyContext } from "../../../Context/Context";
 const barVariants = {
   hidden: {
     y: "100vh",

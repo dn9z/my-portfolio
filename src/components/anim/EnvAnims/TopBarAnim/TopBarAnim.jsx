@@ -7,7 +7,7 @@ const topBarAnimVariants = {
   hidden: {
     x: "-100vw",
   },
-  transition:{
+  transition: {
     x: "-20rem",
   },
   visible: {
@@ -25,14 +25,15 @@ const topBarAnimVariants = {
 };
 
 const TopBarAnim = () => {
-  const location = useContext(MyContext)
+  const { location } = useContext(MyContext);
+  // console.log(location.pathname)
   return (
     <motion.div
       className="topAnim-moving-bar"
       variants={topBarAnimVariants}
-      initial={location.pathname==='/'?'hidden':'transition'}
+      initial={location.pathname === "/" ? "hidden" : "transition"}
       animate="visible"
-      exit={location.pathname==='/'?'hidden':'transition'}
+      exit={location.pathname === "/" ? "hidden" : "transition"}
     ></motion.div>
   );
 };
