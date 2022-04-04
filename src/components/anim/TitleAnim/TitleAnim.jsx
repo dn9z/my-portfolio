@@ -1,8 +1,9 @@
-import React from "react";
+import { useContext } from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 import "./TitleAnim.scss";
 import CharacterAnim from "./CharacterAnim";
 import MidBarAnim from "../MidBarAnim/MidBarAnim";
+import { MyContext } from "../../Context/Context";
 
 const titleContainerVariants = {
   show: {
@@ -38,7 +39,7 @@ const cursorVariants = {
   hidden: {
     opacity: 0,
   },
-  show: {
+  showDelay: {
     opacity: 0.26,
     transition: {
       delay: 2,
@@ -46,16 +47,25 @@ const cursorVariants = {
       repeat: Infinity,
     },
   },
+  show: {
+    opacity: 0.26,
+    transition: {
+      duration: 0.8,
+      repeat: Infinity,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 1 },
+  },
 };
 
-
-
-const TitleAnim = ({ titleString, className, location }) => {
-  console.log(location)
+const TitleAnim = ({ titleString, className }) => {
+  const { location } = useContext(MyContext);
   return (
     <div className={"title-anim-container " + className}>
       {/* *** Motion Bar *** */}
-      <MidBarAnim location={location}/>
+      <MidBarAnim />
       <motion.ul
         className="title"
         variants={titleContainerVariants}
@@ -76,8 +86,8 @@ const TitleAnim = ({ titleString, className, location }) => {
             variants={cursorVariants}
             className="title-cursor"
             initial="hidden"
-            animate="show"
-            transition={{ duration: 0.8, repeat: Infinity }}
+            animate={location.pathname === "/" ? "showDelay" : "show"}
+            exit={location.pathname === "/" && "exit"}
           ></motion.div>
         </div>
       </motion.ul>

@@ -6,7 +6,7 @@ const About = () => {
     <>
       <div className="about-main">
         
-        <TitleAnim titleString={'About me'} className='about-title'/>
+        <TitleAnim titleString={'About me'} className='about-title' />
         
       </div>
     </>

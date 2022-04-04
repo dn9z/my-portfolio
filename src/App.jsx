@@ -5,34 +5,34 @@ import Home from "./routes/Home/Home";
 import About from "./routes/About/About";
 import Work from "./routes/Work/Work";
 import Contact from "./routes/Contact/Contact";
-import TopBarAnim from "./components/anim/TopBarAnim/TopBarAnim";
 import { AnimatePresence } from "framer-motion";
-import MidBarAnim from "./components/anim/MidBarAnim/MidBarAnim";
 import EnvAnim from "./components/anim/EnvAnim/EnvAnim";
+import { MyProvider } from "./components/Context/Context";
 
 function App() {
   const location = useLocation();
 
-    console.log(location.pathname)
   return (
-    <main>
-      <Navbar />
-      <section>
-        <AnimatePresence exitBeforeEnter>
-          <EnvAnim key={location.pathname} />
-        </AnimatePresence>
-        <div className="content-container">
+    <MyProvider>
+      <main>
+        <Navbar />
+        <section>
           <AnimatePresence exitBeforeEnter>
-            <Routes location={location} key={location.pathname}>
-              <Route path="/" element={<Home location={location}/>} />
-              <Route path="/about" element={<About location={location}/>} />
-              <Route path="/work" element={<Work location={location}/>} />
-              <Route path="/contact" element={<Contact location={location}/>} />
-            </Routes>
+            <EnvAnim key={location.pathname} />
           </AnimatePresence>
-        </div>
-      </section>
-    </main>
+          <div className="content-container">
+            <AnimatePresence exitBeforeEnter>
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/work" element={<Work />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </AnimatePresence>
+          </div>
+        </section>
+      </main>
+    </MyProvider>
   );
 }
 

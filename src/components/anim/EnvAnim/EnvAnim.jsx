@@ -1,5 +1,5 @@
 import React from "react";
-import TopBarAnim from "../TopBarAnim/TopBarAnim";
+import TopBarAnim from "./TopBarAnim/TopBarAnim";
 
 const EnvAnim = () => {
   return (
