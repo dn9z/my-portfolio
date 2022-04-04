@@ -14,6 +14,14 @@ $container-height: 6rem;
       .title-char {
         display: block;
       }
+      .whitespace {
+        // background-color: red;
+        opacity: 0;
+        height: 5.6rem;
+        width: 1.6rem;
+        // margin-top: 0.5rem;
+        // margin-left: 1rem;
+      }
       .title-cursor {
         background-color: red;
         height: 5.6rem;

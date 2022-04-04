@@ -27,10 +27,9 @@ const cursorVariants = {
 };
 const SubTitleAnim = ({subTitleString}) => {
   return (
-    <div>
       <motion.div
             className="subTitle"
-            transition={{ delayChildren: 8.6, staggerChildren: 0.1 }}
+            transition={{ delayChildren: 8.6, staggerChildren: 0.08 }}
             initial="hidden"
             animate="show"
             exit={{ y: "100vh", transition: { duration: 2 } }}
@@ -59,7 +58,6 @@ const SubTitleAnim = ({subTitleString}) => {
               }}
             ></motion.span>
           </motion.div>
-    </div>
   )
 }
 

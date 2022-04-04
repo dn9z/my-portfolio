@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { motion, useAnimation, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import "./TitleAnim.scss";
 import CharacterAnim from "./CharacterAnim";
 import MidBarAnim from "./MidBarAnim/MidBarAnim";
@@ -76,12 +76,17 @@ const TitleAnim = ({ titleString, className }) => {
         <div className="title-cursor-wrapper">
           {/* *** Main title *** */}
           {titleString.split("").map((ele, i) => {
-            return (
+            return ele === " " ? (
+              <motion.div key={i} variants={charVariants}>
+                <motion.div className="whitespace"></motion.div>
+              </motion.div>
+            ) : (
               <motion.div key={i} variants={charVariants}>
                 <CharacterAnim char={ele} i={i} />
               </motion.div>
             );
           })}
+
           <motion.div
             variants={cursorVariants}
             className="title-cursor"

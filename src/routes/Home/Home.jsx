@@ -10,12 +10,10 @@ const Home = () => {
     <div className="home-main">
       
       <TitleAnim
-        titleString="Hello There!"
+        titleString="Hello there!"
         className="home-title"
       />
-      {/* <SubTitleAnim subTitleString="My name is Deniz Ilyasoglu, I'm a creative front-end designer, backend developer and sports enthusiast"/> */}
-      <SubTitleAnim subTitleString="Deniz Ilyasoglu"/>
-      <SubTitleAnim subTitleString="Creative front-end designer, backend developer, sports enthusiast"/>
+      <SubTitleAnim subTitleString="My name is Deniz Ilyasoglu, I'm a creative front-end designer, backend developer and sports enthusiast"/>
       </div>
     
   );
