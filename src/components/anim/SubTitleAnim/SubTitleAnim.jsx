@@ -1,5 +1,7 @@
 import React from 'react'
 import './SubTitleAnim.scss'
+import { MyContext } from "../../Context/Context";
+import { useContext } from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 const subTitleCharVariants = {
   hidden: {
@@ -26,6 +28,8 @@ const cursorVariants = {
   },
 };
 const SubTitleAnim = ({subTitleString}) => {
+  const { location } = useContext(MyContext);
+
   return (
       <motion.div
             className="subTitle"
@@ -51,6 +55,7 @@ const SubTitleAnim = ({subTitleString}) => {
               className="subTitle-cursor"
               initial="hidden"
               animate={{ opacity: 0.26 }}
+              exit={{opacity:0, transition:{duration:0}}}
               transition={{
                 delay: 8.6,
                 duration: 0.8,

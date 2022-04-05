@@ -5,6 +5,7 @@ import Home from "./routes/Home/Home";
 import About from "./routes/About/About";
 import Work from "./routes/Work/Work";
 import Contact from "./routes/Contact/Contact";
+import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import EnvAnims from "./components/anim/EnvAnims/EnvAnims";
 import { MyProvider } from "./components/Context/Context";
@@ -20,7 +21,9 @@ function App() {
           <AnimatePresence exitBeforeEnter>
             <EnvAnims key={location.pathname} />
           </AnimatePresence>
-          <div className="content-container">
+          <motion.div className="content-container"
+            animate={location.pathname==='/about'?{y:'-7rem'}:''}
+          >
             <AnimatePresence exitBeforeEnter>
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Home />} />
@@ -29,7 +32,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
               </Routes>
             </AnimatePresence>
-          </div>
+          </motion.div>
         </section>
       </main>
     </MyProvider>

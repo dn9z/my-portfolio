@@ -5,29 +5,16 @@ import CharacterAnim from "./CharacterAnim";
 import MidBarAnim from "./MidBarAnim/MidBarAnim";
 import { MyContext } from "../../Context/Context";
 
-const titleContainerVariants = {
-  show: {
-    transition: {
-      delayChildren: 3.6,
-      staggerChildren: 0.3,
-    },
-  },
-  exit: {
-    transition: {
-      // delayChildren: 0.01,
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 const charVariants = {
   hidden: {
     display: "none",
     opacity: 0,
+    scaleY: 0.8,
   },
   show: {
     display: "block",
     opacity: 1,
+    scaleY: 1,
   },
   exit: {
     display: "none",
@@ -40,7 +27,7 @@ const cursorVariants = {
     opacity: 0,
   },
   showDelay: {
-    opacity: 0.26,
+    opacity: 0.18,
     transition: {
       delay: 2,
       duration: 0.8,
@@ -48,7 +35,7 @@ const cursorVariants = {
     },
   },
   show: {
-    opacity: 0.26,
+    opacity: 0.18,
     transition: {
       duration: 0.8,
       repeat: Infinity,
@@ -62,6 +49,28 @@ const cursorVariants = {
 
 const TitleAnim = ({ titleString, className }) => {
   const { location } = useContext(MyContext);
+  const titleContainerVariants = {
+    show: {
+      transition: {
+        delayChildren: 3.6,
+        // staggerChildren: 0.3,
+        staggerChildren: location.pathname === "/" ? 0.3 : 0.2,
+      },
+    },
+    showAbout: {
+      transition: {
+        delayChildren: 3.6,
+        // staggerChildren: 0.3,
+        staggerChildren: location.pathname === "/" ? 0.3 : 0.2,
+      },
+    },
+    exit: {
+      transition: {
+        // delayChildren: 0.01,
+        staggerChildren: 0.1,
+      },
+    },
+  };
   return (
     <div className={"title-anim-container " + className}>
       {/* *** Motion Bar *** */}
@@ -86,14 +95,25 @@ const TitleAnim = ({ titleString, className }) => {
               </motion.div>
             );
           })}
-
           <motion.div
-            variants={cursorVariants}
-            className="title-cursor"
-            initial="hidden"
-            animate={location.pathname === "/" ? "showDelay" : "show"}
-            exit={location.pathname === "/" && "exit"}
-          ></motion.div>
+            // if on homepage, big cursor will disappear so there are not two
+            initial={{ opacity: 1 }}
+            animate={
+              location.pathname === "/" && {
+                opacity: 0,
+                transition: { delay: 8, duration: 0 },
+              }
+            }
+            exit={{ opacity: 1, transition: { duration: 0 } }}
+          >
+            <motion.div
+              variants={cursorVariants}
+              className="title-cursor"
+              initial="hidden"
+              animate={location.pathname === "/" ? "showDelay" : "show"}
+              // exit={location.pathname === "/" && "exit"}
+            ></motion.div>
+          </motion.div>
         </div>
       </motion.ul>
     </div>
