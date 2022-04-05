@@ -21,8 +21,15 @@ function App() {
           <AnimatePresence exitBeforeEnter>
             <EnvAnims key={location.pathname} />
           </AnimatePresence>
-          <motion.div className="content-container"
-            animate={location.pathname==='/about'?{y:'-7rem'}:''}
+
+          <motion.div
+            className="content-container"
+            animate={
+              location.pathname !== "/"
+                ? { y: "-7rem", transition: { delay: 4 } }
+                : ""
+            }
+            exit={{ transition: { duration: 1 } }}
           >
             <AnimatePresence exitBeforeEnter>
               <Routes location={location} key={location.pathname}>

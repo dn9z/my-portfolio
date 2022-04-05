@@ -4,13 +4,13 @@ import "./About.scss";
 import TitleAnim from "../../components/anim/TitleAnim/TitleAnim";
 const About = () => {
   return (
-    <>
+    <motion.div className="component-container">
       <div className="about-main">
         <TitleAnim titleString={"About me"} className="about-title" />
         <motion.div
           className="description"
-          initial={{ y: "100vh",opacity:0  }}
-          animate={{ y: 0,opacity:1 , transition:{ delay: 6 } }}
+          initial={{ y: "100vh", opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { delay: 6 } }}
           exit={{ y: "100vh" }}
         >
           <p>
@@ -25,8 +25,8 @@ const About = () => {
         <div className="skills-container">
           <motion.div
             className="skills"
-            initial={{ y: "100vh", opacity:0  }}
-            animate={{ y: 0, opacity:1 ,transition:{ delay: 6.3 }}}
+            initial={{ y: "100vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { delay: 6.3 } }}
             exit={{ y: "100vh" }}
           >
             <span>Professional:</span>
@@ -42,10 +42,9 @@ const About = () => {
           </motion.div>
           <motion.div
             className="skills"
-            initial={{ y: "100vh", opacity:0 }}
-            animate={{ y: 0, opacity:1, transition:{ delay: 6.6 }}}
+            initial={{ y: "100vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { delay: 6.6 } }}
             exit={{ y: "100vh" }}
-            
           >
             <span>Experience:</span>
             <ul>
@@ -58,7 +57,7 @@ const About = () => {
           </motion.div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

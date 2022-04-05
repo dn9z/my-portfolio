@@ -5,7 +5,7 @@ import Tilt from "react-parallax-tilt";
 
 const Work = () => {
   return (
-    <>
+    <div className="component-container">
       <TitleAnim titleString={"My Work"} className="work-title" />
       <div className="gallery">
         <Tilt
@@ -25,7 +25,7 @@ const Work = () => {
           </div>
         </Tilt>
       </div>
-    </>
+    </div>
   );
 };
 

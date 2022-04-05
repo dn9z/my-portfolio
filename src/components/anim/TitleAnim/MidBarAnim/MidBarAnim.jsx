@@ -39,13 +39,7 @@ const MidBarAnim = () => {
       className="title-bar"
       variants={barVariants}
       initial={location.pathname === "/" ? "hidden" : "transition"}
-      animate={
-        location.pathname === "/"
-          ? "show"
-          : location.pathname === "/about"
-          ? "showAbout"
-          : "show"
-      }
+      animate={location.pathname !== "/" ? "showAbout" : "show"}
       exit={location.pathname === "/" ? "hidden" : "transition"}
     ></motion.div>
   );
