@@ -15,7 +15,7 @@ const About = () => {
         >
           <p>
             What I enjoy most is creating experiences backed up by interaction
-            and animation. I endorse efficiency and minimalistic approaches.
+            and animation. I endorse efficiency and prefer minimalistic approaches.
             Perfectionistic as I am, I also like working pixel perfect and I
             absolutely love putting effort into creating dynamic and reusable
             code.
