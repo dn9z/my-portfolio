@@ -4,25 +4,27 @@
   margin: 0;
   font-family: Roboto;
 }
-
-main {
-  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
-  overflow: hidden;
-  position: absolute;
-  section {
-    height: 100vh;
-    width: 100vw;
-      // display: flex;
-
-      .content-container {
-        margin: 0 calc(25vw - 6rem);
-        padding-top: 41vh;
-        color: aliceblue;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-
-      }
-    
+body{
+  // width: 100vw;
+  main {
+    background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+    overflow-x: hidden;
+    min-height: 100vh;
+    // position: absolute;
+    section {
+        // display: flex;
+  
+        .content-container {
+          margin: 0 calc(25vw - 6rem);
+          padding-top: 41vh;
+          color: aliceblue;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+  
+        }
+      
+    }
   }
+  
 }
