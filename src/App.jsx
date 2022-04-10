@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import EnvAnims from "./components/anim/EnvAnims/EnvAnims";
 import { MyProvider } from "./components/Context/Context";
+import Background from "./components/Background/Background";
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function App() {
   return (
     <MyProvider>
       <main>
+        <Background/>
         <Navbar />
         <section>
           <AnimatePresence exitBeforeEnter>

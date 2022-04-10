@@ -1,21 +1,23 @@
 .title-anim-container.work-title{
   height: 7rem;
 }
-.tilt-container{
-  transform-style: preserve-3d;
-  width: 15rem;
-  height: 21rem;
-  margin: 1rem;
-  background-color: rgb(39, 63, 197);
-  border-radius: 0.5rem;
-
-    img{
-      width: 100%;
-      padding: 1rem;
-      // border-radius: 0.5rem;
-    }
-    .layer-3d{
-      transform: translateZ(60px);
+.card-container{
+  margin-bottom: 5rem;
+  .tilt-container{
+    transform-style: preserve-3d;
+    width: 15rem;
+    height: 21rem;
+    background-color: rgb(39, 63, 197);
+    border-radius: 0.5rem;
   
+      img{
+        width: 100%;
+        padding: 1rem;
+        // border-radius: 0.5rem;
+      }
+      .layer-3d{
+        transform: translateZ(60px);
+    
+      }
     }
-  }
+}
