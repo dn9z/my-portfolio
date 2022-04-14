@@ -6,7 +6,7 @@ const Background = () => {
   const canvasRef = useRef(null);
   const particlesArrayRef = useRef([]);
   const mouse = useMousePosition();
-  const hueRef = useRef(175)
+  const hueRef = useRef(175);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -41,7 +41,7 @@ const Background = () => {
         const dy = particlesArrayRef.current[i].y - mouse.current.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         // console.log(mousePos.current.x)
-        if (distance < 150) {
+        if (distance < 200) {
           let lightning = createLightning(i, distance);
           // console.log(i)
           ctx.strokeStyle = "hsl(180, 80%, 80%)";
@@ -62,7 +62,7 @@ const Background = () => {
         }
       }
 
-      // *** Remove small particles from array and add new
+      // *** Remove small particles from array and add new ones
       for (let i = 0; i < particlesArrayRef.current.length; i++) {
         if (particlesArrayRef.current[i].size <= 0.3) {
           particlesArrayRef.current.splice(i, 1);
@@ -72,29 +72,23 @@ const Background = () => {
         }
       }
       // handleParticles();
-      // hue++;
-      // requestAnimationFrame(render);
-      hueRef.current++
+      hueRef.current++;
       // *** Color range of particles
-      hueRef.current>275&&(hueRef.current=200)
+      hueRef.current > 275 && (hueRef.current = 200);
       requestId = requestAnimationFrame(render);
-
-
-  
     }
     render();
 
-          const handleResize = e => {
-        ctx.canvas.height = window.innerHeight;
-        ctx.canvas.width = window.innerWidth;
-      };
-  
-      handleResize();
-      window.addEventListener("resize", handleResize);
+    const handleResize = (e) => {
+      ctx.canvas.height = window.innerHeight;
+      ctx.canvas.width = window.innerWidth;
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     return () => {
       cancelAnimationFrame(requestId);
-      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("resize", handleResize);
     };
   });
 
@@ -143,9 +137,9 @@ const Background = () => {
       // this.y = Math.random() * canvas.width;
       this.x = Math.random() * ctx.canvas.width;
       this.y = Math.random() * ctx.canvas.height;
-      this.size = Math.random() * 5 + 1;
-      this.speedX = Math.random() * 3 - 1.5;
-      this.speedY = Math.random() * 3 - 1.5;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = Math.random() * 2 - 1;
+      this.speedY = Math.random() * 2 - 1;
       // this.color = `hsl(${hue},100%,50%)`;
       this.color = "rgba(0,150,255,";
       this.color = `hsla(${hueRef.current},100%,50%,`;
