@@ -21,7 +21,7 @@ const navBarItemVariants = {
 };
 
 const Navbar = () => {
-  // const windowSize = useWindowSize();
+  const windowSize = useWindowSize();
   const [checkbox, setCheckbox] = useState(false);
 
   return (

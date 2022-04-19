@@ -47,7 +47,7 @@ const cursorVariants = {
   },
 };
 
-const TitleAnim = ({ titleString, className }) => {
+const TitleAnim = ({ titleString, className ,subTitleComp}) => {
   const { location } = useContext(MyContext);
   const titleContainerVariants = {
     show: {
@@ -116,6 +116,7 @@ const TitleAnim = ({ titleString, className }) => {
           </motion.div>
         </div>
       </motion.ul>
+      {subTitleComp && subTitleComp }
     </div>
   );
 };

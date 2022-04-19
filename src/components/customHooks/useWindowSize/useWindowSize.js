@@ -8,10 +8,11 @@ const useWindowSize = () => {
     const setFromEvent = (e) => {
       setSize(window.innerWidth)
     };
-
+    
     window.addEventListener("resize", setFromEvent);
-
+    
     setFromEvent()
+    console.log(size)
 
     return () => {
       window.removeEventListener("resize", setFromEvent);

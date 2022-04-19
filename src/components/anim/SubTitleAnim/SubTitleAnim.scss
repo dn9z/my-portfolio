@@ -1,26 +1,53 @@
 @import "../../../components/resources/var.scss";
 .subTitle {
-  font-size: 0.8rem;
+  font-size: 1.05rem;
   font-weight: 300;
+  margin: 0 3.8rem 0 1.2rem;
+  // padding: 0.8rem ;
   @media (min-width: $breakpoint-s) {
-    font-size:1rem;
+    font-size:1.2rem;
+    margin: 0 3rem 0 1.2rem;
   }
   @media (min-width: $breakpoint-m) {
     font-size:1.3rem;
+    margin: 0 3rem 0 1.2rem;
   }
   @media (min-width: $breakpoint-l) {
     font-size:1.5rem;
+    margin: 0 3rem 0 1.4rem;
+
+  }
+  @media (min-width: $breakpoint-xl) {
+    font-size:1.5rem;
+    margin: 0 3rem 0 1.6rem;
+
   }
   .subTitle-char {
     // display: inline;
   }
   .subTitle-cursor {
     background-color: red;
-    height: 1.5rem;
-    width: 0.9rem;
+    height: 1.2rem;
+    width: 0.7rem;
     display: inline-block;
-    margin-left: 0.4rem;
-    top: 0.23rem;
+    margin-left: 0.3rem;
+    top: 0.2rem;
     position: relative;
+    @media (min-width: $breakpoint-s) {
+      height: 1.3rem;
+      width: 0.78rem;
+    }
+    @media (min-width: $breakpoint-m) {
+      height: 1.5rem;
+      width: 0.8rem;
+    }
+    @media (min-width: $breakpoint-l) {
+      height: 1.5rem;
+      width: 0.9rem;
+    }
+    @media (min-width: $breakpoint-xl) {
+      height: 1.5rem;
+      width: 0.9rem;
+    }
   }
 }

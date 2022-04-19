@@ -1,23 +1,53 @@
 @import "../../../components/resources/var.scss";
-$container-height:6rem;
+$container-height: 6rem;
 
 .title-anim-container {
-  display: flex;
-  height: $container-height;
-
+  // display: flex;
+  // flex-direction: column;
+  height: 2rem;
+  margin-left: 1rem;
+  position: absolute;
+  @media (min-width: $breakpoint-s) {
+    height: 4rem;
+    margin-left: 0.2rem;
+  }
+  @media (min-width: $breakpoint-m) {
+    height: 5rem;
+    margin-left: 0.3rem;
+  }
+  @media (min-width: $breakpoint-l) {
+    height: 6rem;
+    margin-left: 1rem;
+  }
+  @media (min-width: $breakpoint-xl) {
+    height: 6rem;
+    margin-left: 1rem;
+  }
   .title {
     // display: flex;
     // flex-direction: column;
-    font-size: 2rem;
+    font-size: 3.8rem;
     font-weight: 400;
+    margin-left: 0.3rem;
     @media (min-width: $breakpoint-s) {
-      font-size:4rem;
+      font-size: 5rem;
+      margin-left: 0.1rem;
+
     }
     @media (min-width: $breakpoint-m) {
-      font-size:5rem;
+      font-size: 5.8rem;
+      margin-left: 0.1rem;
+
     }
     @media (min-width: $breakpoint-l) {
-      font-size:6rem;
+      font-size: 7rem;
+      margin-left: 0.1rem;
+
+    }
+    @media (min-width: $breakpoint-xl) {
+      font-size: 8rem;
+      margin-left: 0.1rem;
+
     }
     .title-cursor-wrapper {
       display: flex;
@@ -27,17 +57,57 @@ $container-height:6rem;
       .whitespace {
         // background-color: red;
         opacity: 0;
-        height: 5.6rem;
-        width: 1.6rem;
+        height: 1.8rem;
+        width: 0.8rem;
         // margin-top: 0.5rem;
         // margin-left: 1rem;
+        @media (min-width: $breakpoint-s) {
+          height: 4rem;
+          width: 1rem;
+        }
+        @media (min-width: $breakpoint-m) {
+          height: 5rem;
+          width: 1.3rem;
+        }
+        @media (min-width: $breakpoint-l) {
+          height: 5.6rem;
+          width: 1.6rem;
+        }
+        @media (min-width: $breakpoint-xl) {
+          height: 5.6rem;
+          width: 1.6rem;
+        }
       }
       .title-cursor {
         background-color: red;
-        height: 5.6rem;
-        width: 3.2rem;
-        margin-top: 0.5rem;
-        margin-left: 1rem;
+        height: 3.2rem;
+        width: 1.9rem;
+        margin-top: 0.7rem;
+        margin-left: 0.4rem;
+        @media (min-width: $breakpoint-s) {
+          height:4.7rem;
+          width: 2.8rem;
+          margin-top: 0.6rem;
+          margin-left: 0.8rem;
+        }
+        @media (min-width: $breakpoint-m) {
+          height: 5.3rem;
+          width: 3.2rem;
+          margin-top: 0.7rem;
+          margin-left: 1.1rem;
+        }
+        @media (min-width: $breakpoint-l) {
+          height: 6rem;
+          width: 3.7rem;
+          margin-top: 1rem;
+          margin-left: 1.2rem;
+        }
+        @media (min-width: $breakpoint-xl) {
+          height: 7rem;
+          width: 4.3rem;
+          margin-top: 1rem;
+          margin-left: 1.3rem;
+        }
       }
     }
   }
