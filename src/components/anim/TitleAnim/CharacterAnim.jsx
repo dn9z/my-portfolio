@@ -4,7 +4,6 @@ import { motion, useAnimation, useMotionValue } from "framer-motion";
 const CharacterAnim = ({ char, i }) => {
   const control = useAnimation();
   const motionValue = useMotionValue(1);
-
   const charVariants = {
     squeeze: {
       scaleY: [0.9, 0.85, 0.8, 0.75, 0.5, 0.4, 0.35, 0.3],

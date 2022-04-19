@@ -1,6 +1,16 @@
+@import "../../../components/resources/var.scss";
 .subTitle {
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   font-weight: 300;
+  @media (min-width: $breakpoint-s) {
+    font-size:1rem;
+  }
+  @media (min-width: $breakpoint-m) {
+    font-size:1.3rem;
+  }
+  @media (min-width: $breakpoint-l) {
+    font-size:1.5rem;
+  }
   .subTitle-char {
     // display: inline;
   }

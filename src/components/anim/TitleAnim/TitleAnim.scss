@@ -1,4 +1,5 @@
-$container-height: 6rem;
+@import "../../../components/resources/var.scss";
+$container-height:6rem;
 
 .title-anim-container {
   display: flex;
@@ -7,8 +8,17 @@ $container-height: 6rem;
   .title {
     // display: flex;
     // flex-direction: column;
-    font-size: $container-height;
+    font-size: 2rem;
     font-weight: 400;
+    @media (min-width: $breakpoint-s) {
+      font-size:4rem;
+    }
+    @media (min-width: $breakpoint-m) {
+      font-size:5rem;
+    }
+    @media (min-width: $breakpoint-l) {
+      font-size:6rem;
+    }
     .title-cursor-wrapper {
       display: flex;
       .title-char {

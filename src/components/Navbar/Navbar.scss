@@ -1,42 +1,110 @@
+@import "../resources/var";
+#chk {
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  &:checked ~ nav {
+    right: 0;
+  }
+}
+#chk:checked ~ nav {
+  right: 0;
+}
+.hide-menu-btn {
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-s) {
+    display: none;
+  }
+}
+.show-menu-btn {
+  color: rgb(151, 151, 151);
+  position: absolute;
+  top: 50vh;
+  right: 0;
+  z-index: 3;
+  cursor: pointer;
+  .menu-btn-container {
+    width: 6rem;
+  }
+  @media (min-width: $breakpoint-s) {
+    display: none;
+  }
+}
 nav {
   position: absolute;
-  // align-self: flex-end;
-  padding-top: 30vh;
-  // margin-right: 2rem;
-  color: #fff;
+  width: 100vw;
   height: 100vh;
-  width: 6rem;
-  right: 0;
-  font-size: 1.5rem;
-  z-index: 1;
+  background-color: rgba(255, 0, 0, 0.603);
+  // padding-top: 30vh;
+  // display: block;
+  position: fixed;
+  right: -100vw;
+  top: 0;
+  transition: 0.7s;
+  z-index: 3;
+
   ul {
-    display: flex;
     list-style: none;
-    flex-direction: column;
-    
+    margin: auto;
     li {
-      padding: 1rem;
-      width: 4rem;
-      // padding: 0;
-      // display: flex;
-      text-align: center;
-      &:hover {
-        background-color: rgb(11, 22, 54);
+      a {
+        text-decoration: none;
       }
     }
+  }
 
-    .active {
-      text-decoration: none;
-      color: red;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-    }
+  @media (min-width: $breakpoint-s) {
+    background-color: rgba(255, 0, 0, 0);
 
-    .inactive {
-      text-decoration: none;
-      color: rgb(201, 201, 201);
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
+    position: absolute;
+    // align-self: flex-end;
+    padding-top: 30vh;
+    // margin-right: 2rem;
+    color: #fff;
+    height: 100vh;
+    width: 6rem;
+    right: 0;
+    font-size: 1.5rem;
+    z-index: 1;
+
+    ul {
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+
+      li {
+        padding: 1rem;
+        width: 4rem;
+        // padding: 0;
+        // display: flex;
+        text-align: center;
+        &:hover {
+          background-color: rgba(11, 22, 54, 0.527);
+        }
+      }
+
+      .active {
+        text-decoration: none;
+        color: red;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+      }
+
+      .inactive {
+        text-decoration: none;
+        color: rgb(201, 201, 201);
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+      }
     }
   }
+
+  // .small-nav {
+  //   height: 100vh;
+  //   width: 100vw;
+  //   display: none;
+  //   position: absolute;
+  //   background-color: red;
+  // }
 }

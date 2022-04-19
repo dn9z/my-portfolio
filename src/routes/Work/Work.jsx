@@ -45,7 +45,7 @@ const Work = () => {
       >
         {workArray.map((ele, i) => {
           return (
-            <motion.div className="card-container" variants={galleryVariants} custom={i}>
+            <motion.div key={i} className="card-container" variants={galleryVariants} custom={i}>
               <Tilt
                 className="tilt-container"
                 perspective={500}

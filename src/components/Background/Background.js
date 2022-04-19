@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import useMousePosition from "../useMousePosition/useMousePosition";
+import useMousePosition from "../customHooks/useMousePosition/useMousePosition";
 import "./Background.scss";
 const Background = () => {
   // let hue = 0;
@@ -90,7 +90,7 @@ const Background = () => {
       cancelAnimationFrame(requestId);
       window.removeEventListener("resize", handleResize);
     };
-  });
+  },[]);
 
   function createLightning(i, distance) {
     // let segmentHeight = groundHeight - centerTop.y;
