@@ -55,13 +55,13 @@ const Background = () => {
           }
           ctx.stroke();
           // ctx.closePath()
+          // push particles when close to mouse
           particlesArrayRef.current[i].speedX =
-            (particlesArrayRef.current[i].posRelativeToMouse.x / distance) * 2.5;
+            (particlesArrayRef.current[i].posRelativeToMouse.x / distance) * 2.4;
           particlesArrayRef.current[i].speedY =
-            (particlesArrayRef.current[i].posRelativeToMouse.y / distance) * 2.5;
+            (particlesArrayRef.current[i].posRelativeToMouse.y / distance) * 2.4;
             // shrink particles faster
             particlesArrayRef.current[i].shrinkSpeed = 0.07
-            // particlesArrayRef.current[i].shrinkSpeed = 1
         }
       }
 
@@ -141,7 +141,9 @@ const Background = () => {
       this.x = Math.random() * ctx.canvas.width;
       this.y = Math.random() * ctx.canvas.height;
       this.size = Math.random() * 2 + 1;
-      this.speedX = Math.random() * 2 - 1;
+      // this.speedX = Math.random() * 2 - 1;
+      // this.speedY = Math.random() * 2 - 1;
+      this.speedX = (Math.random() * 2 - 1)<1.5?Math.random() - 1:Math.random() * 2 - 1;
       this.speedY = Math.random() * 2 - 1;
       // this.color = `hsl(${hue},100%,50%)`;
       this.color = "rgba(0,150,255,";
@@ -169,7 +171,7 @@ const Background = () => {
       this.y += this.speedY;
       // this.x += this.speedX -= this.forceDirection.x * this.force;
       // this.y += this.speedY -= this.forceDirection.y * this.force;
-      if (this.size > 0.3) this.size -= this.shrinkSpeed = 0.02;
+      if (this.size > 0.3) this.size -= this.shrinkSpeed;
     }
     draw() {
       var opacity = 1;
