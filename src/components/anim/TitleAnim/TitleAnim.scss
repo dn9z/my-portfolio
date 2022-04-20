@@ -1,108 +1,119 @@
 @import "../../../components/resources/var.scss";
 $container-height: 6rem;
-
-.title-anim-container {
-  // display: flex;
-  // flex-direction: column;
-  height: 2rem;
-  margin-left: 1rem;
-  position: absolute;
+.title-anim-wrapper {
+  height: 4.8rem;
   @media (min-width: $breakpoint-s) {
-    margin-left: 0.2rem;
+    height: 5rem;
   }
   @media (min-width: $breakpoint-m) {
-    margin-left: 0.3rem;
+    height: 5.8rem;
   }
   @media (min-width: $breakpoint-l) {
-    margin-left: 1rem;
+    height: 7rem;
   }
   @media (min-width: $breakpoint-xl) {
-    margin-left: 1rem;
+    height: 8rem;
   }
-  .title {
+  .title-anim-container {
     // display: flex;
     // flex-direction: column;
-    font-size: 3.8rem;
-    font-weight: 400;
-    margin-left: 0.3rem;
+    height: 2rem;
+    margin-left: 1rem;
+    position: absolute;
     @media (min-width: $breakpoint-s) {
-      font-size: 5rem;
-      margin-left: 0.1rem;
-
+      margin-left: 0.2rem;
     }
     @media (min-width: $breakpoint-m) {
-      font-size: 5.8rem;
-      margin-left: 0.1rem;
-
+      margin-left: 0.3rem;
     }
     @media (min-width: $breakpoint-l) {
-      font-size: 7rem;
-      margin-left: 0.1rem;
-
+      margin-left: 1rem;
     }
     @media (min-width: $breakpoint-xl) {
-      font-size: 8rem;
-      margin-left: 0.1rem;
-
+      margin-left: 1rem;
     }
-    .title-cursor-wrapper {
-      display: flex;
-      .title-char {
-        display: block;
+    .title {
+      // display: flex;
+      // flex-direction: column;
+      font-size: 3.8rem;
+      font-weight: 400;
+      margin-left: 0.3rem;
+      font-family: "Merriweather";
+      @media (min-width: $breakpoint-s) {
+        font-size: 5rem;
+        margin-left: 0.1rem;
       }
-      .whitespace {
-        // background-color: red;
-        opacity: 0;
-        height: 1.8rem;
-        width: 0.8rem;
-        // margin-top: 0.5rem;
-        // margin-left: 1rem;
-        @media (min-width: $breakpoint-s) {
-          height: 4rem;
-          width: 1rem;
-        }
-        @media (min-width: $breakpoint-m) {
-          height: 5rem;
-          width: 1.3rem;
-        }
-        @media (min-width: $breakpoint-l) {
-          height: 5.6rem;
-          width: 1.6rem;
-        }
-        @media (min-width: $breakpoint-xl) {
-          height: 5.6rem;
-          width: 1.6rem;
-        }
+      @media (min-width: $breakpoint-m) {
+        font-size: 5.8rem;
+        margin-left: 0.1rem;
       }
-      .title-cursor {
-        background-color: red;
-        height: 3.2rem;
-        width: 1.9rem;
-        margin-top: 0.7rem;
-        margin-left: 0.4rem;
-        @media (min-width: $breakpoint-s) {
-          height:4.7rem;
-          width: 2.8rem;
-          margin-top: 0.6rem;
-          margin-left: 0.8rem;
+      @media (min-width: $breakpoint-l) {
+        font-size: 7rem;
+        margin-left: 0.1rem;
+      }
+      @media (min-width: $breakpoint-xl) {
+        font-size: 8rem;
+        margin-left: 0.1rem;
+      }
+      .title-cursor-wrapper {
+        display: flex;
+        .title-char {
+          display: block;
         }
-        @media (min-width: $breakpoint-m) {
-          height: 5.3rem;
-          width: 3.2rem;
+        .whitespace {
+          // background-color: red;
+          opacity: 0;
+          height: 1.8rem;
+          width: 0.8rem;
+          // margin-top: 0.5rem;
+          // margin-left: 1rem;
+          @media (min-width: $breakpoint-s) {
+            height: 4rem;
+            width: 1rem;
+          }
+          @media (min-width: $breakpoint-m) {
+            height: 5rem;
+            width: 1.3rem;
+          }
+          @media (min-width: $breakpoint-l) {
+            height: 5.6rem;
+            width: 1.6rem;
+          }
+          @media (min-width: $breakpoint-xl) {
+            height: 5.6rem;
+            width: 1.6rem;
+          }
+        }
+        .title-cursor {
+          background-color: red;
+          height: 3.2rem;
+          width: 1.9rem;
           margin-top: 0.7rem;
-          margin-left: 1.1rem;
-        }
-        @media (min-width: $breakpoint-l) {
-          height: 6rem;
-          width: 3.7rem;
-          margin-top: 1rem;
-          margin-left: 1.2rem;
-        }
-        @media (min-width: $breakpoint-xl) {
-          height: 7rem;
-          width: 4.3rem;
-          margin-top: 1rem;
-          margin-left: 1.3rem;
+          margin-left: 0.4rem;
+          @media (min-width: $breakpoint-s) {
+            height: 4.7rem;
+            width: 2.8rem;
+            margin-top: 0.6rem;
+            margin-left: 0.8rem;
+          }
+          @media (min-width: $breakpoint-m) {
+            height: 5.3rem;
+            width: 3.2rem;
+            margin-top: 0.7rem;
+            margin-left: 1.1rem;
+          }
+          @media (min-width: $breakpoint-l) {
+            height: 6rem;
+            width: 3.7rem;
+            margin-top: 1rem;
+            margin-left: 1.2rem;
+          }
+          @media (min-width: $breakpoint-xl) {
+            height: 7rem;
+            width: 4.3rem;
+            margin-top: 1rem;
+            margin-left: 1.3rem;
+          }
         }
       }
     }

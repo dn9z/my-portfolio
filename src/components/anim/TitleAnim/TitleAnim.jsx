@@ -72,7 +72,8 @@ const TitleAnim = ({ titleString, className ,subTitleComp}) => {
     },
   };
   return (
-    <div className={"title-anim-container " + className}>
+    <div className="title-anim-wrapper">
+<div className={"title-anim-container " + className}>
       {/* *** Motion Bar *** */}
       <MidBarAnim />
       <motion.ul
@@ -118,6 +119,8 @@ const TitleAnim = ({ titleString, className ,subTitleComp}) => {
       </motion.ul>
       {subTitleComp && subTitleComp }
     </div>
+    </div>
+    
   );
 };
 
