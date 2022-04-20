@@ -56,9 +56,10 @@ const Background = () => {
           ctx.stroke();
           // ctx.closePath()
           particlesArrayRef.current[i].speedX =
-            (particlesArrayRef.current[i].posRelativeToMouse.x / distance) * 5;
+            (particlesArrayRef.current[i].posRelativeToMouse.x / distance) * 2.5;
           particlesArrayRef.current[i].speedY =
-            (particlesArrayRef.current[i].posRelativeToMouse.y / distance) * 5;
+            (particlesArrayRef.current[i].posRelativeToMouse.y / distance) * 2.5;
+            particlesArrayRef.current[i].shrinkSpeed = 1
         }
       }
 
@@ -143,6 +144,7 @@ const Background = () => {
       // this.color = `hsl(${hue},100%,50%)`;
       this.color = "rgba(0,150,255,";
       this.color = `hsla(${hueRef.current},100%,50%,`;
+      this.shrinkSpeed = 0.02
       this.posRelativeToMouse = {
         x: this.x - mouse.current.x,
         y: this.y - mouse.current.y,
@@ -165,7 +167,7 @@ const Background = () => {
       this.y += this.speedY;
       // this.x += this.speedX -= this.forceDirection.x * this.force;
       // this.y += this.speedY -= this.forceDirection.y * this.force;
-      if (this.size > 0.3) this.size -= 0.02;
+      if (this.size > 0.3) this.size -= this.shrinkSpeed = 0.02;
     }
     draw() {
       var opacity = 1;
