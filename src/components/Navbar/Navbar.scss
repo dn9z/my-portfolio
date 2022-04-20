@@ -11,8 +11,16 @@
   right: 0;
 }
 .hide-menu-btn {
-  cursor: pointer;
 
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  width: 6rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  .menu-btn-container {
+    width: 5rem;
+  }
   @media (min-width: $breakpoint-s) {
     display: none;
   }
@@ -35,20 +43,31 @@ nav {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 0, 0, 0.603);
+  background-color: rgba(15, 15, 15, 0.815);
   // padding-top: 30vh;
   // display: block;
-  position: fixed;
+  // position: fixed;
   right: -100vw;
   top: 0;
   transition: 0.7s;
   z-index: 3;
+  display: flex;
 
   ul {
     list-style: none;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
     li {
+      padding: 1rem;
+      width: 11rem;
+      border-bottom: 1px solid white;
+      border-radius: 0 0 10rem 10rem;
+      text-align: center;
       a {
+        color: aliceblue;
         text-decoration: none;
       }
     }
