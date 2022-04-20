@@ -25,13 +25,17 @@ const workArray = [
 const Work = () => {
   const galleryVariants = {
     hidden: {
-      x: "100vw",
+      // opacity:0,
+      transform: "matrix3d(1,0,0.00,0,0.00,0.02,1.00,-0.002,0,-1,0.02,0,0,0,0,1)",
+      // y: 0,
     },
     show: (i) => {
-      return{
-        x: i===0?0:i===1?'20vw':i===2&&'40vw'
-      }
-    }
+      return {
+        // opacity:[0,1,1,1],
+        transform: "matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)",
+        // y: i === 0 ? "15rem" : i === 1 ? "10rem" : i === 2 && 0,
+      };
+    },
   };
 
   return (
@@ -41,18 +45,23 @@ const Work = () => {
         className="gallery"
         initial="hidden"
         animate="show"
-        transition={{delayChildren:6.6, staggerChildren: 0.5 }}
+        transition={{ delayChildren: 6.6, staggerChildren: 0.5 }}
       >
         {workArray.map((ele, i) => {
           return (
-            <motion.div key={i} className="card-container" variants={galleryVariants} custom={i}>
+            <motion.div
+              key={i}
+              className="card-container"
+              variants={galleryVariants}
+              custom={i}
+            >
               <Tilt
                 className="tilt-container"
-                perspective={500}
-                glareEnable={true}
-                glareMaxOpacity={0.45}
-                glareBorderRadius="0.5rem"
-                scale={1.02}
+                // perspective={500}
+                // glareEnable={true}
+                // glareMaxOpacity={0.45}
+                // glareBorderRadius="0.5rem"
+                // scale={1.02}
               >
                 <img src={ele.pictureLink} alt="" />
                 <div className="layer-3d">

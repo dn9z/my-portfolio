@@ -57,11 +57,13 @@ const Background = () => {
           // ctx.closePath()
           // push particles when close to mouse
           particlesArrayRef.current[i].speedX =
-            (particlesArrayRef.current[i].posRelativeToMouse.x / distance) * 2.4;
+            (particlesArrayRef.current[i].posRelativeToMouse.x / distance) *
+            2.4;
           particlesArrayRef.current[i].speedY =
-            (particlesArrayRef.current[i].posRelativeToMouse.y / distance) * 2.4;
-            // shrink particles faster
-            particlesArrayRef.current[i].shrinkSpeed = 0.07
+            (particlesArrayRef.current[i].posRelativeToMouse.y / distance) *
+            2.4;
+          // shrink particles faster
+          particlesArrayRef.current[i].shrinkSpeed = 0.07;
         }
       }
 
@@ -93,7 +95,7 @@ const Background = () => {
       cancelAnimationFrame(requestId);
       window.removeEventListener("resize", handleResize);
     };
-  },[]);
+  }, []);
 
   function createLightning(i, distance) {
     // let segmentHeight = groundHeight - centerTop.y;
@@ -143,12 +145,13 @@ const Background = () => {
       this.size = Math.random() * 2 + 1;
       // this.speedX = Math.random() * 2 - 1;
       // this.speedY = Math.random() * 2 - 1;
-      this.speedX = (Math.random() * 2 - 1)<1.5?Math.random() - 1:Math.random() * 2 - 1;
+      this.speedX =
+        Math.random() * 2 - 1 < 1.5 ? Math.random() - 1 : Math.random() * 2 - 1;
       this.speedY = Math.random() * 2 - 1;
       // this.color = `hsl(${hue},100%,50%)`;
       this.color = "rgba(0,150,255,";
       this.color = `hsla(${hueRef.current},100%,50%,`;
-      this.shrinkSpeed = 0.02
+      this.shrinkSpeed = 0.02;
       this.posRelativeToMouse = {
         x: this.x - mouse.current.x,
         y: this.y - mouse.current.y,

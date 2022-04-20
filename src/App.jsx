@@ -16,34 +16,42 @@ function App() {
 
   return (
     <MyProvider>
-      <main>
-        <Background/>
-        <Navbar />
-        <section>
-          <AnimatePresence exitBeforeEnter>
-            <EnvAnims key={location.pathname} />
-          </AnimatePresence>
-
-          <motion.div
-            className="content-container"
-            animate={
-              location.pathname !== "/"
-                ? { y: "-10rem", transition: { delay: 4 } }
-                : ""
-            }
-            exit={{ transition: { duration: 1 } }}
-          >
+      {/* <AnimatePresence exitBeforeEnter> */}
+      <main
+          // Hide scrollbar for 8 seconds
+          // key={location.pathname}
+          // animate={{ overflowY: "visible", transition: { delay: 8 } }}
+          // exit={{ overflowY: "hidden" }}
+        >
+          <Background />
+          <Navbar />
+          <section>
             <AnimatePresence exitBeforeEnter>
-              <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/work" element={<Work />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
+              <EnvAnims key={location.pathname} />
             </AnimatePresence>
-          </motion.div>
-        </section>
-      </main>
+
+            <motion.div
+              className="content-container"
+              animate={
+                location.pathname !== "/"
+                  ? { y: "-10rem", transition: { delay: 4 } }
+                  : ""
+              }
+              exit={{ transition: { duration: 1 } }}
+            >
+              <AnimatePresence exitBeforeEnter>
+                <Routes location={location} key={location.pathname}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/work" element={<Work />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Routes>
+              </AnimatePresence>
+            </motion.div>
+          </section>
+        </main>
+      {/* </AnimatePresence> */}
+       
     </MyProvider>
   );
 }
