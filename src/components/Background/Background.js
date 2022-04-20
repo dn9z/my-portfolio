@@ -59,7 +59,9 @@ const Background = () => {
             (particlesArrayRef.current[i].posRelativeToMouse.x / distance) * 2.5;
           particlesArrayRef.current[i].speedY =
             (particlesArrayRef.current[i].posRelativeToMouse.y / distance) * 2.5;
-            particlesArrayRef.current[i].shrinkSpeed = 1
+            // shrink particles faster
+            particlesArrayRef.current[i].shrinkSpeed = 0.07
+            // particlesArrayRef.current[i].shrinkSpeed = 1
         }
       }
 
