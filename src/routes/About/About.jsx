@@ -4,9 +4,9 @@ import "./About.scss";
 import TitleAnim from "../../components/anim/TitleAnim/TitleAnim";
 const About = () => {
   return (
-    <motion.div className="component-container">
-      <div className="about-main">
-        <TitleAnim titleString={"About me"} className="about-title" />
+    <div className="about-main">
+      <TitleAnim titleString={"About me"} className="about-title" />
+      <div className="about-content">
         <motion.div
           className="description"
           initial={{
@@ -19,7 +19,7 @@ const About = () => {
             // y: 0,
             opacity: 1,
             transform: "matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)",
-            transition: { duration:1.5, delay: 6 },
+            transition: { duration: 1.5, delay: 6 },
           }}
           exit={{ y: "100vh" }}
         >
@@ -42,9 +42,10 @@ const About = () => {
             <span>Professional:</span>
             <ul>
               <li>JavaScript</li>
+              <li>Node.js</li>
+              <li>Express</li>
               <li>React</li>
               <li>CSS/SASS</li>
-              <li>Express</li>
               <li>MongoDB</li>
               <li>Java</li>
               <li>postgreSQL</li>
@@ -63,11 +64,12 @@ const About = () => {
               <li>Autodesk Maya</li>
               <li>Adobe Photoshop</li>
               <li>Adobe Illustrator</li>
+              <li>FL Studio</li>
             </ul>
           </motion.div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

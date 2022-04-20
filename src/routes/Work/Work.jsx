@@ -8,30 +8,30 @@ const workArray = [
   {
     name: "Lorem ipsum",
     pictureLink:
-      "https://www.schulz-grafik.de/wp-content/uploads/2018/03/placeholder.png",
+      "https://songline-marketing.de/wp-content/uploads/2021/08/image-placeholder.jpg",
   },
   {
     name: "Lorem ipsum2",
     pictureLink:
-      "https://www.schulz-grafik.de/wp-content/uploads/2018/03/placeholder.png",
+      "https://songline-marketing.de/wp-content/uploads/2021/08/image-placeholder.jpg",
   },
   {
     name: "Lorem ipsum3",
     pictureLink:
-      "https://www.schulz-grafik.de/wp-content/uploads/2018/03/placeholder.png",
+      "https://songline-marketing.de/wp-content/uploads/2021/08/image-placeholder.jpg",
   },
 ];
 
 const Work = () => {
   const galleryVariants = {
     hidden: {
-      // opacity:0,
+      opacity:0,
       transform: "matrix3d(1,0,0.00,0,0.00,0.02,1.00,-0.002,0,-1,0.02,0,0,0,0,1)",
       // y: 0,
     },
     show: (i) => {
       return {
-        // opacity:[0,1,1,1],
+        opacity:[0,1,1,1],
         transform: "matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)",
         // y: i === 0 ? "15rem" : i === 1 ? "10rem" : i === 2 && 0,
       };
@@ -39,13 +39,13 @@ const Work = () => {
   };
 
   return (
-    <div className="component-container">
+    <>
       <TitleAnim titleString={"My Work"} className="work-title" />
       <motion.div
         className="gallery"
         initial="hidden"
         animate="show"
-        transition={{ delayChildren: 6.6, staggerChildren: 0.5 }}
+        transition={{ delayChildren: 5.9, staggerChildren: 0.5 }}
       >
         {workArray.map((ele, i) => {
           return (
@@ -57,22 +57,27 @@ const Work = () => {
             >
               <Tilt
                 className="tilt-container"
-                // perspective={500}
-                // glareEnable={true}
-                // glareMaxOpacity={0.45}
+                perspective={500}
+                glareEnable={true}
+                glareMaxOpacity={0.45}
                 // glareBorderRadius="0.5rem"
-                // scale={1.02}
+                scale={1.02}
+                gyroscope={true}
+
               >
                 <img src={ele.pictureLink} alt="" />
                 <div className="layer-3d">
                   <h1>{ele.name}</h1>
                 </div>
               </Tilt>
+              {/* <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus eligendi modi corrupti ullam explicabo quo quasi tempora adipisci autem, numquam officiis iusto quaerat consequuntur expedita. Non, ab deleniti. Reiciendis, praesentium.</p>
+              </div> */}
             </motion.div>
           );
         })}
       </motion.div>
-    </div>
+    </>
   );
 };
 

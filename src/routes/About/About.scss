@@ -1,23 +1,77 @@
-.about-main{
-    .description{
-        font-size: 1.5rem;
-        font-weight: 200;
-        padding-top: 2.4rem;
+@import "../../components/resources/var.scss";
+.about-main {
+  .about-content {
+    margin: 0 4rem 0 2.1rem;
+    @media (min-width: $breakpoint-s) {
+      margin: 0 4rem 0 1.3rem;
     }
-    .skills-container{
-        display: flex;
-        .skills{
-            margin: 5rem;
-            span{
-                font-size: 2rem;
-                font-weight: 200;
-            }
-            ul{
-                list-style: none;
-                font-size: 1.1rem;
-                font-weight: 300;
-            }
-        }
+    @media (min-width: $breakpoint-m) {
+      margin: 0 4rem 0 1.2rem;
     }
+    @media (min-width: $breakpoint-l) {
+      margin: 0 4rem 0 1.9rem;
+    }
+    @media (min-width: $breakpoint-xl) {
+      margin: 0 4rem 0 2.1rem;
+    }
+    .description {
+      font-size: 1.2rem;
+      font-weight: 200;
+      //   padding-top: 2.4rem;
+      @media (min-width: $breakpoint-s) {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+      }
+      @media (min-width: $breakpoint-m) {
+        font-size: 1.42rem;
+      }
+      @media (min-width: $breakpoint-l) {
+        font-size: 1.54rem;
+      }
+      @media (min-width: $breakpoint-xl) {
+        font-size: 1.59rem;
+      }
+    }
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      //   justify-content: center;
+      //   margin: 0 10rem 0 0;
+      @media (min-width: $breakpoint-s) {
+        flex-direction: row;
+      }
 
+      .skills {
+        margin: 1rem 0 0 0.3rem;
+        @media (min-width: $breakpoint-s) {
+          margin: 1rem 1.5rem 0 0.3rem;
+        }
+        @media (min-width: $breakpoint-m) {
+          margin: 1rem 3rem 0 0.4rem;
+        }
+        @media (min-width: $breakpoint-l) {
+          margin: 1.7rem 4.9rem 0 0.5rem;
+        }
+        @media (min-width: $breakpoint-xl) {
+          margin: 1rem 7rem 0 0.8rem;
+        }
+        span {
+          font-size: 2.1rem;
+          font-weight: 100;
+          font-family: "Merriweather";
+          @media (min-width: $breakpoint-s) {
+            font-size: 2.3rem;
+          }
+        }
+        ul {
+          list-style: none;
+          font-size: 1.2rem;
+          font-weight: 300;
+          @media (min-width: $breakpoint-s) {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
 }

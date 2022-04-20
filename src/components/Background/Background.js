@@ -147,11 +147,11 @@ const Background = () => {
       // this.speedY = Math.random() * 2 - 1;
       this.speedX =
         Math.random() * 2 - 1 < 1.5 ? Math.random() - 1 : Math.random() * 2 - 1;
-      this.speedY = Math.random() * 2 - 1;
+      this.speedY = Math.random() * 2 - 1 < 1.5 ? Math.random() - 1 : Math.random() * 2 - 1;
       // this.color = `hsl(${hue},100%,50%)`;
       this.color = "rgba(0,150,255,";
       this.color = `hsla(${hueRef.current},100%,50%,`;
-      this.shrinkSpeed = 0.02;
+      this.shrinkSpeed = 0.01;
       this.posRelativeToMouse = {
         x: this.x - mouse.current.x,
         y: this.y - mouse.current.y,

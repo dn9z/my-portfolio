@@ -4,7 +4,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./routes/Home/Home";
 import About from "./routes/About/About";
 import Work from "./routes/Work/Work";
-import Contact from "./routes/Contact/Contact";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import EnvAnims from "./components/anim/EnvAnims/EnvAnims";
@@ -34,7 +33,7 @@ function App() {
               className="content-container"
               animate={
                 location.pathname !== "/"
-                  ? { y: "-10rem", transition: { delay: 4 } }
+                  ? { y: "-10rem", transition: { delay: 2.3 } }
                   : ""
               }
               exit={{ transition: { duration: 1 } }}
@@ -44,7 +43,6 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/work" element={<Work />} />
-                  <Route path="/contact" element={<Contact />} />
                 </Routes>
               </AnimatePresence>
             </motion.div>

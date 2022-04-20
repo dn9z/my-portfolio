@@ -151,16 +151,8 @@ const Navbar = () => {
               },
             }}
           >
-            <NavLink
-              className={({ isActive }) => (isActive ? "active" : "inactive")}
-              to={"/contact"}
-              onClick={() => {
-                setCheckbox(false);
-                console.log(checkbox);
-              }}
-            >
-              Contact
-            </NavLink>
+            <a href="mailto:d.ilyasoglu@outlook.de">Contact</a>
+              
           </motion.li>
           <motion.li
             variants={navBarItemVariants}

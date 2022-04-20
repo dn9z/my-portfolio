@@ -40,7 +40,7 @@
   }
 }
 nav {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: rgba(15, 15, 15, 0.815);
@@ -78,7 +78,7 @@ nav {
 
     position: absolute;
     // align-self: flex-end;
-    padding-top: 10vh;
+    padding-top: 1.5rem;
     // margin-right: 2rem;
     color: #fff;
     height: 100vh;
@@ -106,18 +106,18 @@ nav {
         }
       }
 
-      .active {
-        text-decoration: none;
-        color: red;
+      a{
         writing-mode: vertical-rl;
         text-orientation: mixed;
+        text-decoration: none;
+      }
+
+      .active {
+        color: red;
       }
 
       .inactive {
-        text-decoration: none;
         color: rgb(201, 201, 201);
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
       }
     }
   }
