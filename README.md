@@ -1,3 +1,5 @@
-# .env 
+# My Portfolio
 
-Added ```GENERATE_SOURCEMAP=false``` to .env, to suppress warnings about source map coming from react-parallax-tilt
+This is the legacy version of my personal portfolio. The up-to-date version can be found [here](https://github.com/dn9z/dn9z.github.io)
+
+Visit the [Live Website!](https://dn9z.github.io/)
